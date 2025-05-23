@@ -4,6 +4,7 @@ import ThemeSwitcher from './ThemeSwitcher';
 import { Tabs } from '@skeletonlabs/skeleton-react';
 import '@radix-ui/themes/styles.css';
 import './index.css';
+import './nav.css';
 import Clock from './Clock';
 import Måndag from './Måndag';
 import Tisdag from './Tisdag';
@@ -12,6 +13,7 @@ import Torsdag from './Torsdag';
 import Fredag from './Fredag';
 import Lördag from './Lördag';
 import Söndag from './Söndag';
+
 
 const weekdays = [
   'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'
@@ -63,7 +65,7 @@ const weekdayViews: Record<string, React.FC> = {
 
 function App() {
   const [rooms] = useState(demoRooms);
-  const [selectedDay, setSelectedDay] = useState(new Date().getDay());
+  const [selectedDay, setSelectedDay] = useState(new Date().getDay() === 0 ? 6 : new Date().getDay() - 1);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -75,7 +77,7 @@ function App() {
   const SelectedView = weekdayViews[weekdays[selectedDay]] || (() => null);
 
   return (
-    <div className="min-h-screen flex flex-col p-2 sm:p-4 pb-16 pr-4 bg-surface-50-950 box-border">
+    <div className="min-h-screen flex flex-col p-2 sm:p-4 pb-16 pr-4 bg-surface-50-950 box-border overflow-x-hidden">
       <header className="flex flex-wrap justify-end items-center gap-2 mb-4">
         <ThemeSwitcher />
       </header>
@@ -116,40 +118,64 @@ function App() {
         <Clock />
         <div className="w-full flex flex-col items-center mt-8">
           <hr className="my-4 border-surface-300 w-full max-w-screen-md" />
-          <Tabs value={weekdays[selectedDay]} onValueChange={e => setSelectedDay(weekdays.indexOf(e.value))}>
-            <Tabs.List>
-              {weekdays.map((day, idx) => (
-                <Tabs.Control key={day} value={day}>
-                  <span className={`text-xs sm:text-sm px-2 py-1 rounded-md transition-all ${selectedDay === idx ? 'bg-primary-500 text-primary-50 z-10 relative' : 'opacity-60'}`}>{day}</span>
-                </Tabs.Control>
-              ))}
-            </Tabs.List>
-          </Tabs>
+          <div className="flex justify-center w-full max-w-screen-md">
+            <Tabs value={weekdays[selectedDay]} onValueChange={e => setSelectedDay(weekdays.indexOf(e.value))}>
+              <Tabs.List>
+                {weekdays.map((day, idx) => (
+                  <Tabs.Control key={day} value={day}>
+                    <span className={`fluid text-xs sm:text-sm px-2 py-1 rounded-md transition-all ${selectedDay === idx ? 'bg-primary-500 text-primary-50 z-10 relative' : 'opacity-60'}`}>{day}</span>
+                  </Tabs.Control>
+                ))}
+              </Tabs.List>
+            </Tabs>
+          </div>
         </div>
       </div>
       <Clock />
-      {/* Floating menu button in lower right */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button
-          className="rounded-full w-16 h-16 bg-primary-500 text-primary-50 shadow-lg flex items-center justify-center text-3xl hover:bg-primary-600 transition-all focus:outline-none"
-          aria-label="Öppna meny"
-          onClick={() => setMenuOpen((v) => !v)}
-        >
-          <span className="sr-only">Öppna meny</span>
-          <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
-        </button>
-        {menuOpen && (
-          <div className="absolute bottom-20 right-0 bg-surface-50-950 border border-surface-200-800 rounded-xl shadow-xl py-2 w-48 flex flex-col animate-fade-in">
-            <button
-              className="w-full text-left px-4 py-3 hover:bg-primary-100 rounded-xl text-primary-900 font-semibold flex items-center gap-2"
-              onClick={() => { setMenuOpen(false); navigate('/admin'); }}
-            >
-              <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M12 4h9"/><rect width="18" height="18" x="3" y="2" rx="2"/></svg>
-              Admin
-            </button>
-          </div>
-        )}
-      </div>
+      <nav className="nav">
+        <input type="checkbox" className="nav__cb" id="menu-cb"/>
+        <div className="nav__content">
+          <ul className="nav__items">
+            <li className="nav__item" onClick={() => { setMenuOpen(false); navigate('/'); }}>
+              <span className="nav__item-text">
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+              </span>
+            </li>
+            <li className="nav__item" onClick={() => { setMenuOpen(false); navigate('/admin'); }}>
+              <span className="nav__item-text">
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M12 20h9"/><path d="M12 4h9"/>
+                  <rect width="18" height="18" x="3" y="2" rx="2"/>
+                </svg>
+                Admin
+              </span>
+            </li>
+            <li className="nav__item" onClick={() => { setMenuOpen(false); navigate('/about'); }}>
+              <span className="nav__item-text">
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 16v-4"></path>
+                  <path d="M12 8h.01"></path>
+                </svg>
+                About
+              </span>
+            </li>
+            <li className="nav__item" onClick={() => { setMenuOpen(false); navigate('/contact'); }}>
+              <span className="nav__item-text">
+                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Contact
+              </span>
+            </li>
+          </ul>
+        </div>
+        <label className="nav__btn" htmlFor="menu-cb"></label>
+      </nav>
     </div>
   );
 }
