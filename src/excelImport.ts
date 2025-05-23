@@ -7,7 +7,7 @@ export async function importExcelFile(file: File): Promise<any[]> {
   const worksheet = workbook.worksheets[0];
   const rows: any[] = [];
   const headers: string[] = [];
-  worksheet.getRow(1).eachCell((cell, colNumber) => {
+  worksheet.getRow(1).eachCell((cell) => {
     headers.push(cell.text);
   });
   worksheet.eachRow((row, rowNumber) => {
