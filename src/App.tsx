@@ -1,13 +1,19 @@
+import '@radix-ui/themes/styles.css';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './index.css'
+import ThemeSwitcher from './ThemeSwitcher'
+import { importExcelFile } from './excelImport';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <header className="p-4 flex justify-end">
+        <ThemeSwitcher />
+      </header>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
