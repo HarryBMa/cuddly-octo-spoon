@@ -1,9 +1,32 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ThemeSwitcher from './ThemeSwitcher';
-import { Tabs } from '@skeletonlabs/skeleton-react';
 import '@radix-ui/themes/styles.css';
 import './index.css';
+import './themes/claude.css';
+import './themes/candyland.css';
+import './themes/caffeine.css';
+import './themes/bold-tech.css';
+import './themes/midnight-bloom.css';
+import './themes/claymorphism.css';
+import './themes/clean-slate.css';
+import './themes/cyberpunk.css';
+import './themes/nature.css';
+import './themes/northern-lights.css';
+import './themes/ocean-breeze.css';
+import './themes/retro-arcade.css';
+import './themes/sunset-horizon.css';
+import './themes/neo-brutalism.css';
+import './themes/modern-minimal.css';
+import './themes/ghibli-studio.css';
+import './themes/elegant-luxury.css';
+import './themes/corporate.css';
+import './themes/pastel-dreams.css';
+import './themes/vintage-paper.css';
+import './themes/slack.css';
+import './themes/perplexity.css';
+import './themes/valorant.css';
+
 import Clock from './Clock';
 import Måndag from './Måndag';
 import Tisdag from './Tisdag';
@@ -12,6 +35,7 @@ import Torsdag from './Torsdag';
 import Fredag from './Fredag';
 import Lördag from './Lördag';
 import Söndag from './Söndag';
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const weekdays = [
   'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag', 'Söndag'
@@ -116,14 +140,14 @@ function App() {
         <Clock />
         <div className="w-full flex flex-col items-center mt-8">
           <hr className="my-4 border-surface-300 w-full max-w-screen-md" />
-          <Tabs value={weekdays[selectedDay]} onValueChange={e => setSelectedDay(weekdays.indexOf(e.value))}>
-            <Tabs.List>
+          <Tabs value={weekdays[selectedDay]} onValueChange={(value) => setSelectedDay(weekdays.indexOf(value))}>
+            <TabsList>
               {weekdays.map((day, idx) => (
-                <Tabs.Control key={day} value={day}>
+                <TabsTrigger key={day} value={day}>
                   <span className={`text-xs sm:text-sm px-2 py-1 rounded-md transition-all ${selectedDay === idx ? 'bg-primary-500 text-primary-50 z-10 relative' : 'opacity-60'}`}>{day}</span>
-                </Tabs.Control>
+                </TabsTrigger>
               ))}
-            </Tabs.List>
+            </TabsList>
           </Tabs>
         </div>
       </div>

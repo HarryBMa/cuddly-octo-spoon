@@ -1,120 +1,121 @@
-import { useState, useEffect } from 'react';
-import LightToggle from './LightToggle';
+import { useState, useEffect, useRef } from 'react';
+import { Button } from '@/components/ui/button';
+import { Moon, Sun, ChevronDown } from 'lucide-react';
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
 const themes = [
-	{ name: 'catppuccin', emoji: '🐈' },
-	{ name: 'cerberus', emoji: '🐺' },
-	{ name: 'concord', emoji: '🤖' },
-	{ name: 'crimson', emoji: '🔴' },
-	{ name: 'fennec', emoji: '🦊' },
-	{ name: 'hamlindigo', emoji: '👔' },
-	{ name: 'legacy', emoji: '💀' },
-	{ name: 'mint', emoji: '🍃' },
-	{ name: 'modern', emoji: '🌸' },
-	{ name: 'mona', emoji: '🐙' },
-	{ name: 'nosh', emoji: '🥙' },
-	{ name: 'nouveau', emoji: '👑' },
-	{ name: 'pine', emoji: '🌲' },
-	{ name: 'reign', emoji: '📒' },
-	{ name: 'rocket', emoji: '🚀' },
-	{ name: 'rose', emoji: '🌷' },
-	{ name: 'sahara', emoji: '🏜️' },
-	{ name: 'seafoam', emoji: '🧜‍♀️' },
-	{ name: 'terminus', emoji: '🌑' },
-	{ name: 'vintage', emoji: '📺' },
-	{ name: 'vox', emoji: '👾' },
-	{ name: 'wintry', emoji: '🌨️' },
+	{ name: 'Claude', emoji: '🤖', value: 'claude' },
+	{ name: 'Candyland', emoji: '🍬', value: 'candyland' },
+	{ name: 'Caffeine', emoji: '☕', value: 'caffeine' },
+	{ name: 'Bold Tech', emoji: '💻', value: 'bold-tech' },
+	{ name: 'Midnight Bloom', emoji: '🌙', value: 'midnight-bloom' },
+	{ name: 'Claymorphism', emoji: '🏺', value: 'claymorphism' },
+	{ name: 'Clean Slate', emoji: '📝', value: 'clean-slate' },
+	{ name: 'Cyberpunk', emoji: '🤖', value: 'cyberpunk' },
+	{ name: 'Nature', emoji: '🌿', value: 'nature' },
+	{ name: 'Northern Lights', emoji: '🌌', value: 'northern-lights' },
+	{ name: 'Ocean Breeze', emoji: '🌊', value: 'ocean-breeze' },
+	{ name: 'Retro Arcade', emoji: '🎮', value: 'retro-arcade' },
+	{ name: 'Sunset Horizon', emoji: '🌅', value: 'sunset-horizon' },
+	{ name: 'Neo Brutalism', emoji: '🏗️', value: 'neo-brutalism' },
+	{ name: 'Modern Minimal', emoji: '✨', value: 'modern-minimal' },
+	{ name: 'Ghibli Studio', emoji: '🎨', value: 'ghibli-studio' },
+	{ name: 'Elegant Luxury', emoji: '💎', value: 'elegant-luxury' },
+	{ name: 'Corporate', emoji: '💼', value: 'corporate' }
 ];
 
 const ThemeSwitcher = () => {
-	const [open, setOpen] = useState(false);
-	const [theme, setTheme] = useState('cerberus');
-	const [dark] = useState(false);
+	const [isOpen, setIsOpen] = useState(false);
+	const [mode, setMode] = useState<'light' | 'dark'>(() => {
+		if (typeof window !== 'undefined') {
+			return (localStorage.getItem('theme-mode') as 'light' | 'dark') || 'light';
+		}
+		return 'light';
+	});
+
+	const [selectedTheme, setSelectedTheme] = useState(() => {
+		if (typeof window !== 'undefined') {
+			return localStorage.getItem('selectedTheme') || 'claude';
+		}
+		return 'claude';
+	});
+
+	const dropdownRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		document.documentElement.setAttribute('data-theme', theme);
-		document.documentElement.setAttribute('data-mode', dark ? 'dark' : 'light');
-	}, [theme, dark]);
+		const handleClickOutside = (event: MouseEvent) => {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+				setIsOpen(false);
+			}
+		};
+
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => document.removeEventListener('mousedown', handleClickOutside);
+	}, []);
+
+	useEffect(() => {
+		const root = window.document.documentElement;
+		root.classList.remove('light', 'dark');
+		root.classList.add(mode);
+		root.setAttribute('data-theme', mode);
+		localStorage.setItem('theme-mode', mode);
+	}, [mode]);
+
+	useEffect(() => {
+		const root = window.document.documentElement;
+		themes.forEach(t => root.classList.remove(t.value));
+		root.classList.add(selectedTheme);
+		localStorage.setItem('selectedTheme', selectedTheme);
+	}, [selectedTheme]);
 
 	return (
-		<div className="relative inline-block text-left">
-			<button
-				className="btn hover:preset-tonal gap-1"
-				title="Choose Theme"
-				aria-haspopup="dialog"
-				aria-expanded={open}
-				onClick={() => setOpen((v) => !v)}
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					strokeWidth="2"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					className="lucide lucide-swatch-book size-5"
+		<div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2" ref={dropdownRef}>
+			<div className="relative">
+				<button
+					onClick={() => setIsOpen(!isOpen)}
+					className="flex items-center gap-2 rounded-lg border bg-background px-3 py-2 text-sm font-medium shadow-sm hover:bg-accent"
 				>
-					<path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"></path>
-					<path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7"></path>
-					<path d="M 7 17h.01"></path>
-					<path d="m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"></path>
-				</svg>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					strokeWidth="2"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					className="lucide lucide-chevron-down size-4 opacity-60"
-				>
-					<path d="m6 9 6 6 6-6"></path>
-				</svg>
-			</button>
-			{open && (
-				<div
-					className="card max-h-[60vh] overflow-y-auto bg-surface-50-950 border border-surface-200-800 space-y-4 p-4 absolute left-0 top-12 right-auto z-50 w-72 shadow-xl"
-					role="dialog"
-					style={{ minWidth: 'min(100vw, 260px)' }}
-				>
-					<div className="flex items-center justify-between mb-2">
-						<span className="font-bold">Theme Mode</span>
-						<LightToggle />
-					</div>
-					<div className="flex flex-col gap-2 overflow-y-auto">
-						{themes.map((t) => (
-							<button
-								key={t.name}
-								data-theme={t.name}
-								className={`w-full flex items-center gap-3 bg-surface-50-950 p-2 preset-outlined-surface-100-900 hover:preset-outlined-surface-950-50 rounded-md transition-all ${
-									theme === t.name
-										? 'preset-outlined-surface-500 ring-2 ring-primary-500'
-										: ''
-								}`}
-								onClick={() => {
-									setTheme(t.name);
-									setOpen(false);
+					<span>Theme</span>
+					<ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+				</button>
+				{isOpen && (
+					<div className="absolute bottom-full right-0 mb-2 w-64 rounded-lg border bg-background p-2 shadow-lg">
+						<div className="max-h-[60vh] overflow-y-auto">
+							<Tabs
+								value={selectedTheme}
+								onValueChange={(value) => {
+									setSelectedTheme(value);
+									setIsOpen(false);
 								}}
+								className="w-full"
 							>
-								<span className="text-lg w-6 text-center">{t.emoji}</span>
-								<span className="flex-1 text-sm font-bold text-left truncate">
-									{t.name}
-								</span>
-								<span className="flex gap-1">
-									<span className="inline-block w-4 h-4 rounded-full bg-primary-500 border border-black/10"></span>
-									<span className="inline-block w-4 h-4 rounded-full bg-secondary-500 border border-black/10"></span>
-									<span className="inline-block w-4 h-4 rounded-full bg-tertiary-500 border border-black/10"></span>
-								</span>
-							</button>
-						))}
+								<TabsList className="grid w-full grid-cols-6 gap-2">
+									{themes.map((t) => (
+										<TabsTrigger
+											key={t.value}
+											value={t.value}
+											className="flex items-center gap-2"
+										>
+											<span>{t.emoji}</span>
+											<span>{t.name}</span>
+										</TabsTrigger>
+									))}
+								</TabsList>
+							</Tabs>
+						</div>
 					</div>
-				</div>
-			)}
+				)}
+			</div>
+			<Button
+				variant="outline"
+				size="icon"
+				onClick={() => setMode(mode === 'light' ? 'dark' : 'light')}
+				className="rounded-full"
+			>
+				<Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+				<Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+				<span className="sr-only">Toggle theme</span>
+			</Button>
 		</div>
 	);
 };

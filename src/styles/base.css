@@ -2,30 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './themes/claude.css';
-@import './themes/candyland.css';
-@import './themes/caffeine.css';
-@import './themes/bold-tech.css';
-@import './themes/midnight-bloom.css';
-@import './themes/claymorphism.css';
-@import './themes/clean-slate.css';
-@import './themes/cyberpunk.css';
-@import './themes/nature.css';
-@import './themes/northern-lights.css';
-@import './themes/ocean-breeze.css';
-@import './themes/retro-arcade.css';
-@import './themes/sunset-horizon.css';
-@import './themes/neo-brutalism.css';
-@import './themes/modern-minimal.css';
-@import './themes/ghibli-studio.css';
-@import './themes/elegant-luxury.css';
-@import './themes/corporate.css';
-@import './themes/pastel-dreams.css';
-@import './themes/vintage-paper.css';
-@import './themes/slack.css';
-@import './themes/perplexity.css';
-@import './themes/valorant.css';
-
 @layer base {
   :root {
     --radius: 0.5rem;
