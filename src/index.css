@@ -1,27 +1,3154 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import '@skeletonlabs/skeleton';
-@import '@skeletonlabs/skeleton/optional/presets';
-@import '@skeletonlabs/skeleton/themes/catppuccin';
-@import '@skeletonlabs/skeleton/themes/cerberus';
-@import '@skeletonlabs/skeleton/themes/concord';
-@import '@skeletonlabs/skeleton/themes/crimson';
-@import '@skeletonlabs/skeleton/themes/fennec';
-@import '@skeletonlabs/skeleton/themes/hamlindigo';
-@import '@skeletonlabs/skeleton/themes/legacy';
-@import '@skeletonlabs/skeleton/themes/mint';
-@import '@skeletonlabs/skeleton/themes/modern';
-@import '@skeletonlabs/skeleton/themes/mona';
-@import '@skeletonlabs/skeleton/themes/nosh';
-@import '@skeletonlabs/skeleton/themes/nouveau';
-@import '@skeletonlabs/skeleton/themes/pine';
-@import '@skeletonlabs/skeleton/themes/reign';
-@import '@skeletonlabs/skeleton/themes/rocket';
-@import '@skeletonlabs/skeleton/themes/rose';
-@import '@skeletonlabs/skeleton/themes/sahara';
-@import '@skeletonlabs/skeleton/themes/seafoam';
-@import '@skeletonlabs/skeleton/themes/terminus';
-@import '@skeletonlabs/skeleton/themes/vintage';
-@import '@skeletonlabs/skeleton/themes/vox';
-@import '@skeletonlabs/skeleton/themes/wintry';
-@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+@layer base {
+  :root {
+    --background: oklch(1.00 0 0);
+    --foreground: oklch(0 0 0);
+    --card: oklch(1.00 0 0);
+    --card-foreground: oklch(0 0 0);
+    --popover: oklch(1.00 0 0);
+    --popover-foreground: oklch(0 0 0);
+    --primary: oklch(0.65 0.24 26.92);
+    --primary-foreground: oklch(1.00 0 0);
+    --secondary: oklch(0.97 0.21 109.74);
+    --secondary-foreground: oklch(0 0 0);
+    --muted: oklch(0.96 0 0);
+    --muted-foreground: oklch(0.32 0 0);
+    --accent: oklch(0.56 0.24 260.83);
+    --accent-foreground: oklch(1.00 0 0);
+    --destructive: oklch(0 0 0);
+    --border: oklch(0 0 0);
+    --input: oklch(0 0 0);
+    --ring: oklch(0.65 0.24 26.92);
+    --radius: 0.5rem;
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --chart-1: oklch(0.62 0.08 65.54);
+    --chart-2: oklch(0.56 0.06 68.58);
+    --chart-3: oklch(0.49 0.06 72.68);
+    --chart-4: oklch(0.68 0.06 64.77);
+    --chart-5: oklch(0.73 0.06 66.69);
+    --sidebar: oklch(0.92 0.02 83.04);
+    --sidebar-foreground: oklch(0.38 0.02 64.34);
+    --sidebar-primary: oklch(0.62 0.08 65.54);
+    --sidebar-primary-foreground: oklch(1.00 0 0);
+    --sidebar-accent: oklch(0.83 0.04 88.79);
+    --sidebar-accent-foreground: oklch(0.38 0.02 64.34);
+    --sidebar-border: oklch(0.86 0.03 84.57);
+    --sidebar-ring: oklch(0.62 0.08 65.54);
+    --font-sans: Libre Baskerville, serif;
+    --font-serif: Lora, serif;
+    --font-mono: IBM Plex Mono, monospace;
+    --shadow-color: oklch(0.3 0.0891 19.6);
+    --shadow-opacity: 0.08;
+    --shadow-blur: 3px;
+    --shadow-spread: 0px;
+    --shadow-offset-x: 0px;
+    --shadow-offset-y: 0px;
+    --spacing: 0.25rem;
+    --shadow-2xs: 0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.04);
+    --shadow-xs: 0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.04);
+    --shadow-md: 0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.08), 0px 2px 4px -1px oklch(0.30 0.09 19.60 / 0.08);
+    --shadow-lg: 0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.08), 0px 4px 6px -1px oklch(0.30 0.09 19.60 / 0.08);
+    --shadow-xl: 0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.08), 0px 8px 10px -1px oklch(0.30 0.09 19.60 / 0.08);
+    --shadow-2xl: 0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.20);
+    --tracking-normal: 0em;
+  }
+
+  .dark {
+    --background: oklch(0 0 0);
+    --foreground: oklch(1.00 0 0);
+    --card: oklch(0.32 0 0);
+    --card-foreground: oklch(1.00 0 0);
+    --popover: oklch(0.32 0 0);
+    --popover-foreground: oklch(1.00 0 0);
+    --primary: oklch(0.70 0.19 23.04);
+    --primary-foreground: oklch(0 0 0);
+    --secondary: oklch(0.97 0.20 109.61);
+    --secondary-foreground: oklch(0 0 0);
+    --muted: oklch(0.32 0 0);
+    --muted-foreground: oklch(0.85 0 0);
+    --accent: oklch(0.68 0.18 251.63);
+    --accent-foreground: oklch(0 0 0);
+    --destructive: oklch(1.00 0 0);
+    --border: oklch(1.00 0 0);
+    --input: oklch(1.00 0 0);
+    --ring: oklch(0.70 0.19 23.04);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.2);
+    --chart-1: oklch(0.73 0.06 66.69);
+    --chart-2: oklch(0.68 0.06 64.77);
+    --chart-3: oklch(0.62 0.08 65.54);
+    --chart-4: oklch(0.56 0.06 68.58);
+    --chart-5: oklch(0.49 0.06 72.68);
+    --sidebar: oklch(0.27 0.01 57.66);
+    --sidebar-foreground: oklch(0.92 0.02 83.04);
+    --sidebar-primary: oklch(0.73 0.06 66.69);
+    --sidebar-primary-foreground: oklch(0.27 0.01 57.66);
+    --sidebar-accent: oklch(0.42 0.03 56.34);
+    --sidebar-accent-foreground: oklch(0.92 0.02 83.04);
+    --sidebar-border: oklch(0.38 0.02 57.13);
+    --sidebar-ring: oklch(0.73 0.06 66.69);
+    --shadow-color: hsl(0 0% 0%);
+    --shadow-opacity: 0.1;
+    --shadow-blur: 3px;
+    --shadow-spread: 0px;
+    --shadow-offset-x: 0;
+    --shadow-offset-y: 1px;
+    --letter-spacing: 0em;
+    --spacing: 0.25rem;
+    --radius: 0.25rem;
+    --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: "Geist", "Geist Fallback", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+    --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+    --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
+  }
+  .theme {
+    --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-serif: "Geist", "Geist Fallback", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --radius: 0.25rem;
+    --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+    --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+    --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+    --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+    --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+  }
+  body {
+    letter-spacing: var(--tracking-normal);
+  }
+
+  /* Theme-specific styles */
+  .bold-tech {
+    --background: oklch(0.96 0.02 90.19);
+    --foreground: oklch(0.38 0.02 64.34);
+    --primary: oklch(0.62 0.08 65.54);
+    --secondary: oklch(0.88 0.03 85.55);
+    --accent: oklch(0.83 0.04 88.79);
+  }
+
+  .caffeine {
+    --background: oklch(0.98 0.01 87.41);
+    --foreground: oklch(0.38 0.02 64.34);
+    --primary: oklch(0.55 0.14 32.92);
+    --secondary: oklch(0.88 0.03 85.55);
+    --accent: oklch(0.83 0.04 88.79);
+  }
+
+  .candyland {
+    --background: oklch(0.98 0.01 87.41);
+    --foreground: oklch(0.38 0.02 64.34);
+    --primary: oklch(0.55 0.14 32.92);
+    --secondary: oklch(0.88 0.03 85.55);
+    --accent: oklch(0.83 0.04 88.79);
+  }
+
+  /* Add more theme-specific styles here */
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  .btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--ring));
+  }
+  .btn:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  .btn-primary {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  }
+  .btn-primary:hover {
+    background-color: color-mix(in srgb, hsl(var(--primary)) 90%, transparent);
+  }
+  .btn-secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+  .btn-secondary:hover {
+    background-color: color-mix(in srgb, hsl(var(--secondary)) 80%, transparent);
+  }
+}
+
+@layer utilities {
+  .theme-transition {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+}
+
+/* Theme-specific styles */
+DEFAULT
+:root {
+  --background: oklch(1.00 0 0);
+    --foreground: oklch(0.14 0.00 285.86);
+    --card: oklch(1.00 0 0);
+    --card-foreground: oklch(0.14 0.00 285.86);
+    --popover: oklch(1.00 0 0);
+    --popover-foreground: oklch(0.14 0.00 285.86);
+    --primary: oklch(0.21 0.01 285.93);
+    --primary-foreground: oklch(0.99 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.21 0.01 285.93);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.55 0.02 285.93);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.21 0.01 285.93);
+    --destructive: oklch(0.58 0.24 28.48);
+    --border: oklch(0.92 0.00 286.61);
+    --input: oklch(0.92 0.00 286.61);
+    --ring: oklch(0.71 0.01 286.09);
+    --chart-1: oklch(0.65 0.22 36.85);
+    --chart-2: oklch(0.60 0.11 184.15);
+    --chart-3: oklch(0.40 0.07 227.18);
+    --chart-4: oklch(0.83 0.17 81.03);
+    --chart-5: oklch(0.77 0.17 65.36);
+    --sidebar: oklch(0.99 0 0);
+    --sidebar-foreground: oklch(0.14 0.00 285.86);
+    --sidebar-primary: oklch(0.21 0.01 285.93);
+    --sidebar-primary-foreground: oklch(0.99 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.21 0.01 285.93);
+    --sidebar-border: oklch(0.92 0.00 286.61);
+    --sidebar-ring: oklch(0.71 0.01 286.09);
+
+    --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: "Geist", "Geist Fallback", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    --radius: 0.625rem;
+    
+    --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+    --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+    --shadow-sm: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+    --shadow: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
+  
+  }
+
+  .dark {
+    --background: oklch(0.14 0.00 285.86);
+    --foreground: oklch(0.99 0 0);
+    --card: oklch(0.21 0.01 285.93);
+    --card-foreground: oklch(0.99 0 0);
+    --popover: oklch(0.21 0.01 285.93);
+    --popover-foreground: oklch(0.99 0 0);
+    --primary: oklch(0.92 0.00 286.61);
+    --primary-foreground: oklch(0.21 0.01 285.93);
+    --secondary: oklch(0.27 0.01 286.10);
+    --secondary-foreground: oklch(0.99 0 0);
+    --muted: oklch(0.27 0.01 286.10);
+    --muted-foreground: oklch(0.71 0.01 286.09);
+    --accent: oklch(0.27 0.01 286.10);
+    --accent-foreground: oklch(0.99 0 0);
+    --destructive: oklch(0.70 0.19 22.23);
+    --border: oklch(1.00 0 0 / 10%);
+    --input: oklch(1.00 0 0 / 15%);
+    --ring: oklch(0.55 0.02 285.93);
+    --chart-1: oklch(0.49 0.24 264.40);
+    --chart-2: oklch(0.70 0.16 160.43);
+    --chart-3: oklch(0.77 0.17 65.36);
+    --chart-4: oklch(0.62 0.26 305.32);
+    --chart-5: oklch(0.64 0.25 16.51);
+    --sidebar: oklch(0.21 0.01 285.93);
+    --sidebar-foreground: oklch(0.99 0 0);
+    --sidebar-primary: oklch(0.49 0.24 264.40);
+    --sidebar-primary-foreground: oklch(0.99 0 0);
+    --sidebar-accent: oklch(0.27 0.01 286.10);
+    --sidebar-accent-foreground: oklch(0.99 0 0);
+    --sidebar-border: oklch(1.00 0 0 / 10%);
+    --sidebar-ring: oklch(0.55 0.02 285.93);
+    
+    --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+    --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+    --shadow-sm: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+    --shadow: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
+    --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
+  }
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+.theme-bold-tech
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "bold-tech",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "0.625rem"
+    },
+    "light": {
+      "background": "oklch(1.00 0 0)",
+      "foreground": "oklch(0.36 0.14 278.70)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.36 0.14 278.70)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.36 0.14 278.70)",
+      "primary": "oklch(0.61 0.22 292.73)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.96 0.02 295.27)",
+      "secondary-foreground": "oklch(0.46 0.21 277.03)",
+      "muted": "oklch(0.97 0.02 293.85)",
+      "muted-foreground": "oklch(0.54 0.25 293.02)",
+      "accent": "oklch(0.93 0.03 255.58)",
+      "accent-foreground": "oklch(0.42 0.18 265.64)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.93 0.03 272.81)",
+      "input": "oklch(0.93 0.03 272.81)",
+      "ring": "oklch(0.61 0.22 292.73)",
+      "chart-1": "oklch(0.61 0.22 292.73)",
+      "chart-2": "oklch(0.54 0.25 293.02)",
+      "chart-3": "oklch(0.49 0.24 292.59)",
+      "chart-4": "oklch(0.43 0.21 292.77)",
+      "chart-5": "oklch(0.38 0.18 293.75)",
+      "radius": "0.625rem",
+      "sidebar": "oklch(0.97 0.02 293.85)",
+      "sidebar-foreground": "oklch(0.36 0.14 278.70)",
+      "sidebar-primary": "oklch(0.61 0.22 292.73)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.93 0.03 255.58)",
+      "sidebar-accent-foreground": "oklch(0.42 0.18 265.64)",
+      "sidebar-border": "oklch(0.93 0.03 272.81)",
+      "sidebar-ring": "oklch(0.61 0.22 292.73)",
+      "font-sans": "Roboto, sans-serif",
+      "font-serif": "Playfair Display, serif",
+      "font-mono": "Fira Code, monospace"
+    },
+    "dark": {
+      "background": "oklch(0.21 0.04 265.76)",
+      "foreground": "oklch(0.93 0.03 272.81)",
+      "card": "oklch(0.26 0.09 281.29)",
+      "card-foreground": "oklch(0.93 0.03 272.81)",
+      "popover": "oklch(0.26 0.09 281.29)",
+      "popover-foreground": "oklch(0.93 0.03 272.81)",
+      "primary": "oklch(0.61 0.22 292.73)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.26 0.09 281.29)",
+      "secondary-foreground": "oklch(0.93 0.03 272.81)",
+      "muted": "oklch(0.26 0.09 281.29)",
+      "muted-foreground": "oklch(0.81 0.10 293.59)",
+      "accent": "oklch(0.46 0.21 277.03)",
+      "accent-foreground": "oklch(0.93 0.03 272.81)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.28 0.14 291.10)",
+      "input": "oklch(0.28 0.14 291.10)",
+      "ring": "oklch(0.61 0.22 292.73)",
+      "chart-1": "oklch(0.71 0.16 293.55)",
+      "chart-2": "oklch(0.61 0.22 292.73)",
+      "chart-3": "oklch(0.54 0.25 293.02)",
+      "chart-4": "oklch(0.49 0.24 292.59)",
+      "chart-5": "oklch(0.43 0.21 292.77)",
+      "sidebar": "oklch(0.21 0.04 265.76)",
+      "sidebar-foreground": "oklch(0.93 0.03 272.81)",
+      "sidebar-primary": "oklch(0.61 0.22 292.73)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.46 0.21 277.03)",
+      "sidebar-accent-foreground": "oklch(0.93 0.03 272.81)",
+      "sidebar-border": "oklch(0.28 0.14 291.10)",
+      "sidebar-ring": "oklch(0.61 0.22 292.73)",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "css": {}
+}
+
+.theme-caffeine {
+:root {
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.24 0 0);
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.24 0 0);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.24 0 0);
+  --primary: oklch(0.43 0.04 42.00);
+  --primary-foreground: oklch(1.00 0 0);
+  --secondary: oklch(0.92 0.07 76.67);
+  --secondary-foreground: oklch(0.35 0.07 41.41);
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.50 0 0);
+  --accent: oklch(0.93 0 0);
+  --accent-foreground: oklch(0.24 0 0);
+  --destructive: oklch(0.63 0.19 33.26);
+  --border: oklch(0.88 0 0);
+  --input: oklch(0.88 0 0);
+  --ring: oklch(0.43 0.04 42.00);
+  --chart-1: oklch(0.43 0.04 42.00);
+  --chart-2: oklch(0.92 0.07 76.67);
+  --chart-3: oklch(0.93 0 0);
+  --chart-4: oklch(0.94 0.05 75.02);
+  --chart-5: oklch(0.43 0.04 42.00);
+  --sidebar: oklch(0.99 0 0);
+  --sidebar-foreground: oklch(0.26 0 0);
+  --sidebar-primary: oklch(0.33 0 0);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.98 0 0);
+  --sidebar-accent-foreground: oklch(0.33 0 0);
+  --sidebar-border: oklch(0.94 0 0);
+  --sidebar-ring: oklch(0.77 0 0);
+
+  --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: "Geist", "Geist Fallback", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --radius: 0.5rem;
+  
+  --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+  --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+  --shadow: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
+  
+}
+
+.dark {
+  --background: oklch(0.18 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.21 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.21 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.92 0.05 67.14);
+  --primary-foreground: oklch(0.20 0.02 201.14);
+  --secondary: oklch(0.32 0.02 67.00);
+  --secondary-foreground: oklch(0.92 0.05 67.14);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.77 0 0);
+  --accent: oklch(0.29 0 0);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.63 0.19 33.26);
+  --border: oklch(0.24 0.01 88.77);
+  --input: oklch(0.40 0 0);
+  --ring: oklch(0.92 0.05 67.14);
+  --chart-1: oklch(0.92 0.05 67.14);
+  --chart-2: oklch(0.32 0.02 67.00);
+  --chart-3: oklch(0.29 0 0);
+  --chart-4: oklch(0.35 0.02 67.11);
+  --chart-5: oklch(0.92 0.05 67.14);
+  --sidebar: oklch(0.21 0.01 285.56);
+  --sidebar-foreground: oklch(0.97 0 0);
+  --sidebar-primary: oklch(0.49 0.22 264.43);
+  --sidebar-primary-foreground: oklch(1.00 0 0);
+  --sidebar-accent: oklch(0.27 0.01 285.81);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(0.27 0.01 285.81);
+  --sidebar-ring: oklch(0.87 0.01 286.27);
+  
+  --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+  --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+  --shadow: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+}
+
+.theme-candyland {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "candyland",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "0.5rem"
+    },
+    "light": {
+      "background": "oklch(0.98 0.00 228.42)",
+      "foreground": "oklch(0.32 0 0)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.32 0 0)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.32 0 0)",
+      "primary": "oklch(0.87 0.07 7.11)",
+      "primary-foreground": "oklch(0 0 0)",
+      "secondary": "oklch(0.81 0.08 225.74)",
+      "secondary-foreground": "oklch(0 0 0)",
+      "muted": "oklch(0.88 0.03 98.07)",
+      "muted-foreground": "oklch(0.54 0 0)",
+      "accent": "oklch(0.97 0.21 109.76)",
+      "accent-foreground": "oklch(0 0 0)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.87 0 0)",
+      "input": "oklch(0.87 0 0)",
+      "ring": "oklch(0.87 0.07 7.11)",
+      "chart-1": "oklch(0.87 0.07 7.11)",
+      "chart-2": "oklch(0.81 0.08 225.74)",
+      "chart-3": "oklch(0.97 0.21 109.76)",
+      "chart-4": "oklch(0.80 0.14 349.25)",
+      "chart-5": "oklch(0.74 0.23 142.85)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.98 0.00 228.42)",
+      "sidebar-foreground": "oklch(0.32 0 0)",
+      "sidebar-primary": "oklch(0.87 0.07 7.11)",
+      "sidebar-primary-foreground": "oklch(0 0 0)",
+      "sidebar-accent": "oklch(0.97 0.21 109.76)",
+      "sidebar-accent-foreground": "oklch(0 0 0)",
+      "sidebar-border": "oklch(0.87 0 0)",
+      "sidebar-ring": "oklch(0.87 0.07 7.11)",
+      "font-sans": "Poppins, sans-serif",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "Roboto Mono, monospace"
+    },
+    "dark": {
+      "background": "oklch(0.23 0.01 264.30)",
+      "foreground": "oklch(0.92 0 0)",
+      "card": "oklch(0.32 0.01 223.62)",
+      "card-foreground": "oklch(0.92 0 0)",
+      "popover": "oklch(0.32 0.01 223.62)",
+      "popover-foreground": "oklch(0.92 0 0)",
+      "primary": "oklch(0.80 0.14 349.25)",
+      "primary-foreground": "oklch(0 0 0)",
+      "secondary": "oklch(0.74 0.23 142.85)",
+      "secondary-foreground": "oklch(0 0 0)",
+      "muted": "oklch(0.39 0 0)",
+      "muted-foreground": "oklch(0.72 0 0)",
+      "accent": "oklch(0.81 0.08 225.74)",
+      "accent-foreground": "oklch(0 0 0)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.39 0 0)",
+      "input": "oklch(0.39 0 0)",
+      "ring": "oklch(0.80 0.14 349.25)",
+      "chart-1": "oklch(0.80 0.14 349.25)",
+      "chart-2": "oklch(0.74 0.23 142.85)",
+      "chart-3": "oklch(0.81 0.08 225.74)",
+      "chart-4": "oklch(0.97 0.21 109.76)",
+      "chart-5": "oklch(0.87 0.18 90.37)",
+      "sidebar": "oklch(0.23 0.01 264.30)",
+      "sidebar-foreground": "oklch(0.92 0 0)",
+      "sidebar-primary": "oklch(0.80 0.14 349.25)",
+      "sidebar-primary-foreground": "oklch(0 0 0)",
+      "sidebar-accent": "oklch(0.81 0.08 225.74)",
+      "sidebar-accent-foreground": "oklch(0 0 0)",
+      "sidebar-border": "oklch(0.39 0 0)",
+      "sidebar-ring": "oklch(0.80 0.14 349.25)",
+      "radius": "0.5rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "css": {}
+}
+}
+
+.theme-claude {
+ :root {
+  --background: oklch(0.98 0.01 93.48);
+  --foreground: oklch(0.34 0.03 94.42);
+  --card: oklch(0.98 0.01 93.48);
+  --card-foreground: oklch(0.19 0 0);
+  --popover: oklch(1.00 0 0);
+  --popover-foreground: oklch(0.27 0.02 99.70);
+  --primary: oklch(0.62 0.14 39.15);
+  --primary-foreground: oklch(1.00 0 0);
+  --secondary: oklch(0.92 0.01 87.42);
+  --secondary-foreground: oklch(0.43 0.02 99.33);
+  --muted: oklch(0.93 0.02 91.55);
+  --muted-foreground: oklch(0.61 0.01 91.49);
+  --accent: oklch(0.92 0.01 87.42);
+  --accent-foreground: oklch(0.27 0.02 99.70);
+  --destructive: oklch(0.19 0 0);
+  --border: oklch(0.88 0.01 100.76);
+  --input: oklch(0.76 0.02 96.91);
+  --ring: oklch(0.59 0.17 252.92);
+  --chart-1: oklch(0.56 0.13 42.95);
+  --chart-2: oklch(0.69 0.16 290.29);
+  --chart-3: oklch(0.88 0.03 91.64);
+  --chart-4: oklch(0.88 0.04 298.21);
+  --chart-5: oklch(0.56 0.13 41.94);
+  --sidebar: oklch(0.97 0.01 93.49);
+  --sidebar-foreground: oklch(0.36 0.01 106.85);
+  --sidebar-primary: oklch(0.62 0.14 39.15);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.92 0.01 87.42);
+  --sidebar-accent-foreground: oklch(0.33 0 0);
+  --sidebar-border: oklch(0.94 0 0);
+  --sidebar-ring: oklch(0.77 0 0);
+
+  --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: "Geist", "Geist Fallback", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --radius: 0.5rem;
+  
+  --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+  --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+  --shadow: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
+  
+}
+
+.dark {
+  --background: oklch(0.27 0 0);
+  --foreground: oklch(0.81 0.01 93.53);
+  --card: oklch(0.27 0 0);
+  --card-foreground: oklch(0.98 0.01 93.48);
+  --popover: oklch(0.31 0 0);
+  --popover-foreground: oklch(0.92 0 0);
+  --primary: oklch(0.67 0.13 38.92);
+  --primary-foreground: oklch(1.00 0 0);
+  --secondary: oklch(0.98 0.01 93.48);
+  --secondary-foreground: oklch(0.31 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.77 0.02 100.64);
+  --accent: oklch(0.21 0.01 88.79);
+  --accent-foreground: oklch(0.97 0.01 93.49);
+  --destructive: oklch(0.64 0.21 25.39);
+  --border: oklch(0.36 0.01 106.85);
+  --input: oklch(0.43 0.01 99.03);
+  --ring: oklch(0.59 0.17 252.92);
+  --chart-1: oklch(0.56 0.13 42.95);
+  --chart-2: oklch(0.69 0.16 290.29);
+  --chart-3: oklch(0.21 0.01 88.79);
+  --chart-4: oklch(0.31 0.05 289.74);
+  --chart-5: oklch(0.56 0.13 41.94);
+  --sidebar: oklch(0.24 0 0);
+  --sidebar-foreground: oklch(0.81 0.01 93.53);
+  --sidebar-primary: oklch(0.33 0 0);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.17 0 0);
+  --sidebar-accent-foreground: oklch(0.81 0.01 93.53);
+  --sidebar-border: oklch(0.94 0 0);
+  --sidebar-ring: oklch(0.77 0 0);
+  
+  --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+  --shadow-xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+  --shadow: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-md: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-lg: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10);
+  --shadow-2xl: 0 1px 3px 0px oklch(0.00 0 0 / 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+}
+}
+
+.theme-claymorphism {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "claymorphism",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "1.25rem"
+    },
+    "light": {
+      "background": "oklch(0.92 0.00 49.03)",
+      "foreground": "oklch(0.28 0.04 260.03)",
+      "card": "oklch(0.97 0 0)",
+      "card-foreground": "oklch(0.28 0.04 260.03)",
+      "popover": "oklch(0.97 0 0)",
+      "popover-foreground": "oklch(0.28 0.04 260.03)",
+      "primary": "oklch(0.59 0.20 277.12)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.87 0.00 56.48)",
+      "secondary-foreground": "oklch(0.45 0.03 256.80)",
+      "muted": "oklch(0.92 0.00 49.03)",
+      "muted-foreground": "oklch(0.55 0.02 264.37)",
+      "accent": "oklch(0.94 0.03 322.02)",
+      "accent-foreground": "oklch(0.37 0.03 259.73)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.87 0.00 56.48)",
+      "input": "oklch(0.87 0.00 56.48)",
+      "ring": "oklch(0.59 0.20 277.12)",
+      "chart-1": "oklch(0.59 0.20 277.12)",
+      "chart-2": "oklch(0.51 0.23 276.97)",
+      "chart-3": "oklch(0.46 0.21 277.03)",
+      "chart-4": "oklch(0.40 0.18 277.37)",
+      "chart-5": "oklch(0.36 0.14 278.70)",
+      "radius": "1.25rem",
+      "sidebar": "oklch(0.87 0.00 56.48)",
+      "sidebar-foreground": "oklch(0.28 0.04 260.03)",
+      "sidebar-primary": "oklch(0.59 0.20 277.12)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.94 0.03 322.02)",
+      "sidebar-accent-foreground": "oklch(0.37 0.03 259.73)",
+      "sidebar-border": "oklch(0.87 0.00 56.48)",
+      "sidebar-ring": "oklch(0.59 0.20 277.12)",
+      "font-sans": "Plus Jakarta Sans, sans-serif",
+      "font-serif": "Lora, serif",
+      "font-mono": "Roboto Mono, monospace"
+    },
+    "dark": {
+      "background": "oklch(0.22 0.01 67.44)",
+      "foreground": "oklch(0.93 0.01 255.51)",
+      "card": "oklch(0.28 0.01 59.35)",
+      "card-foreground": "oklch(0.93 0.01 255.51)",
+      "popover": "oklch(0.28 0.01 59.35)",
+      "popover-foreground": "oklch(0.93 0.01 255.51)",
+      "primary": "oklch(0.68 0.16 276.94)",
+      "primary-foreground": "oklch(0.22 0.01 67.44)",
+      "secondary": "oklch(0.34 0.01 59.44)",
+      "secondary-foreground": "oklch(0.87 0.01 258.36)",
+      "muted": "oklch(0.28 0.01 59.35)",
+      "muted-foreground": "oklch(0.71 0.02 261.33)",
+      "accent": "oklch(0.39 0.01 59.49)",
+      "accent-foreground": "oklch(0.87 0.01 258.36)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.34 0.01 59.44)",
+      "input": "oklch(0.34 0.01 59.44)",
+      "ring": "oklch(0.68 0.16 276.94)",
+      "chart-1": "oklch(0.68 0.16 276.94)",
+      "chart-2": "oklch(0.59 0.20 277.12)",
+      "chart-3": "oklch(0.51 0.23 276.97)",
+      "chart-4": "oklch(0.46 0.21 277.03)",
+      "chart-5": "oklch(0.40 0.18 277.37)",
+      "sidebar": "oklch(0.34 0.01 59.44)",
+      "sidebar-foreground": "oklch(0.93 0.01 255.51)",
+      "sidebar-primary": "oklch(0.68 0.16 276.94)",
+      "sidebar-primary-foreground": "oklch(0.22 0.01 67.44)",
+      "sidebar-accent": "oklch(0.39 0.01 59.49)",
+      "sidebar-accent-foreground": "oklch(0.87 0.01 258.36)",
+      "sidebar-border": "oklch(0.34 0.01 59.44)",
+      "sidebar-ring": "oklch(0.68 0.16 276.94)",
+      "radius": "1.25rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "css": {}
+}
+}
+
+.theme-clean-slate {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "clean-slate",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Inter, sans-serif",
+      "font-mono": "JetBrains Mono, monospace",
+      "font-serif": "Merriweather, serif",
+      "radius": "0.5rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.98 0 0)",
+      "foreground": "oklch(0.28 0.04 260.33)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.28 0.04 260.33)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.28 0.04 260.33)",
+      "primary": "oklch(0.59 0.20 277.06)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.93 0.01 261.82)",
+      "secondary-foreground": "oklch(0.37 0.03 259.73)",
+      "muted": "oklch(0.97 0 0)",
+      "muted-foreground": "oklch(0.55 0.02 264.41)",
+      "accent": "oklch(0.93 0.03 273.66)",
+      "accent-foreground": "oklch(0.37 0.03 259.73)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.87 0.01 261.81)",
+      "input": "oklch(0.87 0.01 261.81)",
+      "ring": "oklch(0.59 0.20 277.06)",
+      "chart-1": "oklch(0.59 0.20 277.06)",
+      "chart-2": "oklch(0.51 0.23 276.97)",
+      "chart-3": "oklch(0.46 0.21 277.06)",
+      "chart-4": "oklch(0.40 0.18 277.16)",
+      "chart-5": "oklch(0.36 0.14 278.65)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.97 0 0)",
+      "sidebar-foreground": "oklch(0.28 0.04 260.33)",
+      "sidebar-primary": "oklch(0.59 0.20 277.06)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.93 0.03 273.66)",
+      "sidebar-accent-foreground": "oklch(0.37 0.03 259.73)",
+      "sidebar-border": "oklch(0.87 0.01 261.81)",
+      "sidebar-ring": "oklch(0.59 0.20 277.06)",
+      "font-sans": "Inter, sans-serif",
+      "font-serif": "Merriweather, serif",
+      "font-mono": "JetBrains Mono, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "8px",
+      "shadow-spread": "-1px",
+      "shadow-offset-x": "0px",
+      "shadow-offset-y": "4px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0px 4px 8px -1px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0px 4px 8px -1px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0px 4px 8px -1px oklch(0.00 0 0 / 0.10), 0px 1px 2px -2px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0px 4px 8px -1px oklch(0.00 0 0 / 0.10), 0px 1px 2px -2px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0px 4px 8px -1px oklch(0.00 0 0 / 0.10), 0px 2px 4px -2px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0px 4px 8px -1px oklch(0.00 0 0 / 0.10), 0px 4px 6px -2px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0px 4px 8px -1px oklch(0.00 0 0 / 0.10), 0px 8px 10px -2px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0px 4px 8px -1px oklch(0.00 0 0 / 0.25)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.21 0.04 264.04)",
+      "foreground": "oklch(0.93 0.01 256.71)",
+      "card": "oklch(0.28 0.04 260.33)",
+      "card-foreground": "oklch(0.93 0.01 256.71)",
+      "popover": "oklch(0.28 0.04 260.33)",
+      "popover-foreground": "oklch(0.93 0.01 256.71)",
+      "primary": "oklch(0.68 0.16 276.93)",
+      "primary-foreground": "oklch(0.21 0.04 264.04)",
+      "secondary": "oklch(0.34 0.03 261.83)",
+      "secondary-foreground": "oklch(0.87 0.01 261.81)",
+      "muted": "oklch(0.28 0.04 260.33)",
+      "muted-foreground": "oklch(0.71 0.02 261.33)",
+      "accent": "oklch(0.37 0.03 259.73)",
+      "accent-foreground": "oklch(0.87 0.01 261.81)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.45 0.03 257.68)",
+      "input": "oklch(0.45 0.03 257.68)",
+      "ring": "oklch(0.68 0.16 276.93)",
+      "chart-1": "oklch(0.68 0.16 276.93)",
+      "chart-2": "oklch(0.59 0.20 277.06)",
+      "chart-3": "oklch(0.51 0.23 276.97)",
+      "chart-4": "oklch(0.46 0.21 277.06)",
+      "chart-5": "oklch(0.40 0.18 277.16)",
+      "sidebar": "oklch(0.28 0.04 260.33)",
+      "sidebar-foreground": "oklch(0.93 0.01 256.71)",
+      "sidebar-primary": "oklch(0.68 0.16 276.93)",
+      "sidebar-primary-foreground": "oklch(0.21 0.04 264.04)",
+      "sidebar-accent": "oklch(0.37 0.03 259.73)",
+      "sidebar-accent-foreground": "oklch(0.87 0.01 261.81)",
+      "sidebar-border": "oklch(0.45 0.03 257.68)",
+      "sidebar-ring": "oklch(0.68 0.16 276.93)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+}
+
+.theme-corporate {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "corporate",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Inter, sans-serif",
+      "font-mono": "IBM Plex Mono, monospace",
+      "font-serif": "Source Serif 4, serif",
+      "radius": "0.375rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.98 0 0)",
+      "foreground": "oklch(0.21 0.03 263.61)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.21 0.03 263.61)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.21 0.03 263.61)",
+      "primary": "oklch(0.48 0.20 260.47)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.97 0 0)",
+      "secondary-foreground": "oklch(0.37 0.03 259.73)",
+      "muted": "oklch(0.97 0 0)",
+      "muted-foreground": "oklch(0.55 0.02 264.41)",
+      "accent": "oklch(0.95 0.02 260.18)",
+      "accent-foreground": "oklch(0.48 0.20 260.47)",
+      "destructive": "oklch(0.58 0.22 27.29)",
+      "border": "oklch(0.93 0.01 261.82)",
+      "input": "oklch(0.93 0.01 261.82)",
+      "ring": "oklch(0.48 0.20 260.47)",
+      "chart-1": "oklch(0.48 0.20 260.47)",
+      "chart-2": "oklch(0.56 0.24 260.92)",
+      "chart-3": "oklch(0.40 0.16 259.61)",
+      "chart-4": "oklch(0.43 0.16 259.82)",
+      "chart-5": "oklch(0.29 0.07 261.20)",
+      "radius": "0.375rem",
+      "sidebar": "oklch(0.97 0 0)",
+      "sidebar-foreground": "oklch(0.21 0.03 263.61)",
+      "sidebar-primary": "oklch(0.48 0.20 260.47)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.95 0.02 260.18)",
+      "sidebar-accent-foreground": "oklch(0.48 0.20 260.47)",
+      "sidebar-border": "oklch(0.93 0.01 261.82)",
+      "sidebar-ring": "oklch(0.48 0.20 260.47)",
+      "font-sans": "Inter, sans-serif",
+      "font-serif": "Source Serif 4, serif",
+      "font-mono": "IBM Plex Mono, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.26 0.03 262.67)",
+      "foreground": "oklch(0.93 0.01 261.82)",
+      "card": "oklch(0.30 0.03 260.51)",
+      "card-foreground": "oklch(0.93 0.01 261.82)",
+      "popover": "oklch(0.30 0.03 260.51)",
+      "popover-foreground": "oklch(0.93 0.01 261.82)",
+      "primary": "oklch(0.56 0.24 260.92)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.35 0.04 261.40)",
+      "secondary-foreground": "oklch(0.93 0.01 261.82)",
+      "muted": "oklch(0.30 0.03 260.51)",
+      "muted-foreground": "oklch(0.71 0.02 261.33)",
+      "accent": "oklch(0.33 0.04 264.63)",
+      "accent-foreground": "oklch(0.93 0.01 261.82)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.35 0.04 261.40)",
+      "input": "oklch(0.35 0.04 261.40)",
+      "ring": "oklch(0.56 0.24 260.92)",
+      "chart-1": "oklch(0.56 0.24 260.92)",
+      "chart-2": "oklch(0.48 0.20 260.47)",
+      "chart-3": "oklch(0.69 0.17 255.59)",
+      "chart-4": "oklch(0.43 0.16 259.82)",
+      "chart-5": "oklch(0.29 0.07 261.20)",
+      "sidebar": "oklch(0.26 0.03 262.67)",
+      "sidebar-foreground": "oklch(0.93 0.01 261.82)",
+      "sidebar-primary": "oklch(0.56 0.24 260.92)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.33 0.04 264.63)",
+      "sidebar-accent-foreground": "oklch(0.93 0.01 261.82)",
+      "sidebar-border": "oklch(0.35 0.04 261.40)",
+      "sidebar-ring": "oklch(0.56 0.24 260.92)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+}
+
+.theme-cyberpunk {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cyberpunk",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "0.5rem"
+    },
+    "light": {
+      "background": "oklch(0.98 0 0)",
+      "foreground": "oklch(0.16 0.04 281.83)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.16 0.04 281.83)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.16 0.04 281.83)",
+      "primary": "oklch(0.67 0.29 341.42)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.96 0.02 286.08)",
+      "secondary-foreground": "oklch(0.16 0.04 281.83)",
+      "muted": "oklch(0.96 0.02 286.08)",
+      "muted-foreground": "oklch(0.16 0.04 281.83)",
+      "accent": "oklch(0.89 0.17 171.26)",
+      "accent-foreground": "oklch(0.16 0.04 281.83)",
+      "destructive": "oklch(0.65 0.23 34.04)",
+      "border": "oklch(0.92 0.01 224.97)",
+      "input": "oklch(0.92 0.01 224.97)",
+      "ring": "oklch(0.67 0.29 341.42)",
+      "chart-1": "oklch(0.67 0.29 341.42)",
+      "chart-2": "oklch(0.55 0.29 299.10)",
+      "chart-3": "oklch(0.84 0.15 209.27)",
+      "chart-4": "oklch(0.89 0.17 171.26)",
+      "chart-5": "oklch(0.92 0.19 101.40)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.96 0.02 286.08)",
+      "sidebar-foreground": "oklch(0.16 0.04 281.83)",
+      "sidebar-primary": "oklch(0.67 0.29 341.42)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.89 0.17 171.26)",
+      "sidebar-accent-foreground": "oklch(0.16 0.04 281.83)",
+      "sidebar-border": "oklch(0.92 0.01 224.97)",
+      "sidebar-ring": "oklch(0.67 0.29 341.42)",
+      "font-sans": "Outfit, sans-serif",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "Fira Code, monospace"
+    },
+    "dark": {
+      "background": "oklch(0.16 0.04 281.83)",
+      "foreground": "oklch(0.95 0.01 260.77)",
+      "card": "oklch(0.25 0.06 281.15)",
+      "card-foreground": "oklch(0.95 0.01 260.77)",
+      "popover": "oklch(0.25 0.06 281.15)",
+      "popover-foreground": "oklch(0.95 0.01 260.77)",
+      "primary": "oklch(0.67 0.29 341.42)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.25 0.06 281.15)",
+      "secondary-foreground": "oklch(0.95 0.01 260.77)",
+      "muted": "oklch(0.25 0.06 281.15)",
+      "muted-foreground": "oklch(0.62 0.05 278.12)",
+      "accent": "oklch(0.89 0.17 171.26)",
+      "accent-foreground": "oklch(0.16 0.04 281.83)",
+      "destructive": "oklch(0.65 0.23 34.04)",
+      "border": "oklch(0.33 0.08 280.79)",
+      "input": "oklch(0.33 0.08 280.79)",
+      "ring": "oklch(0.67 0.29 341.42)",
+      "chart-1": "oklch(0.67 0.29 341.42)",
+      "chart-2": "oklch(0.55 0.29 299.10)",
+      "chart-3": "oklch(0.84 0.15 209.27)",
+      "chart-4": "oklch(0.89 0.17 171.26)",
+      "chart-5": "oklch(0.92 0.19 101.40)",
+      "sidebar": "oklch(0.16 0.04 281.83)",
+      "sidebar-foreground": "oklch(0.95 0.01 260.77)",
+      "sidebar-primary": "oklch(0.67 0.29 341.42)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.89 0.17 171.26)",
+      "sidebar-accent-foreground": "oklch(0.16 0.04 281.83)",
+      "sidebar-border": "oklch(0.33 0.08 280.79)",
+      "sidebar-ring": "oklch(0.67 0.29 341.42)",
+      "radius": "0.5rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "css": {}
+}
+}
+
+.theme-elegant-luxury {
+ {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "elegant-luxury",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Poppins, sans-serif",
+      "font-mono": "IBM Plex Mono, monospace",
+      "font-serif": "Libre Baskerville, serif",
+      "radius": "0.375rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.98 0 0)",
+      "foreground": "oklch(0.22 0 0)",
+      "card": "oklch(0.98 0 0)",
+      "card-foreground": "oklch(0.22 0 0)",
+      "popover": "oklch(0.98 0 0)",
+      "popover-foreground": "oklch(0.22 0 0)",
+      "primary": "oklch(0.47 0.15 25.06)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.96 0.04 88.18)",
+      "secondary-foreground": "oklch(0.48 0.10 75.09)",
+      "muted": "oklch(0.94 0.01 48.70)",
+      "muted-foreground": "oklch(0.44 0.01 73.63)",
+      "accent": "oklch(0.96 0.06 94.84)",
+      "accent-foreground": "oklch(0.40 0.13 25.81)",
+      "destructive": "oklch(0.44 0.16 26.84)",
+      "border": "oklch(0.94 0.03 81.74)",
+      "input": "oklch(0.94 0.03 81.74)",
+      "ring": "oklch(0.47 0.15 25.06)",
+      "chart-1": "oklch(0.51 0.19 27.52)",
+      "chart-2": "oklch(0.47 0.15 25.06)",
+      "chart-3": "oklch(0.40 0.13 25.81)",
+      "chart-4": "oklch(0.56 0.15 49.06)",
+      "chart-5": "oklch(0.47 0.12 46.52)",
+      "radius": "0.375rem",
+      "sidebar": "oklch(0.94 0.01 48.70)",
+      "sidebar-foreground": "oklch(0.22 0 0)",
+      "sidebar-primary": "oklch(0.47 0.15 25.06)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.96 0.06 94.84)",
+      "sidebar-accent-foreground": "oklch(0.40 0.13 25.81)",
+      "sidebar-border": "oklch(0.94 0.03 81.74)",
+      "sidebar-ring": "oklch(0.47 0.15 25.06)",
+      "font-sans": "Poppins, sans-serif",
+      "font-serif": "Libre Baskerville, serif",
+      "font-mono": "IBM Plex Mono, monospace",
+      "shadow-color": "hsl(0 63% 18%)",
+      "shadow-opacity": "0.12",
+      "shadow-blur": "16px",
+      "shadow-spread": "-2px",
+      "shadow-offset-x": "1px",
+      "shadow-offset-y": "1px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.06)",
+      "shadow-xs": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.06)",
+      "shadow-sm": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 1px 2px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 1px 2px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow-md": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 2px 4px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow-lg": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 4px 6px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow-xl": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 8px 10px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow-2xl": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.30)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.22 0.01 52.96)",
+      "foreground": "oklch(0.97 0 0)",
+      "card": "oklch(0.27 0.01 39.35)",
+      "card-foreground": "oklch(0.97 0 0)",
+      "popover": "oklch(0.27 0.01 39.35)",
+      "popover-foreground": "oklch(0.97 0 0)",
+      "primary": "oklch(0.51 0.19 27.52)",
+      "primary-foreground": "oklch(0.98 0 0)",
+      "secondary": "oklch(0.47 0.12 46.52)",
+      "secondary-foreground": "oklch(0.96 0.06 94.84)",
+      "muted": "oklch(0.27 0.01 39.35)",
+      "muted-foreground": "oklch(0.87 0 0)",
+      "accent": "oklch(0.56 0.15 49.06)",
+      "accent-foreground": "oklch(0.96 0.06 94.84)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.37 0.01 73.58)",
+      "input": "oklch(0.37 0.01 73.58)",
+      "ring": "oklch(0.51 0.19 27.52)",
+      "chart-1": "oklch(0.71 0.17 21.96)",
+      "chart-2": "oklch(0.64 0.21 25.39)",
+      "chart-3": "oklch(0.58 0.22 27.29)",
+      "chart-4": "oklch(0.84 0.16 84.06)",
+      "chart-5": "oklch(0.77 0.16 69.82)",
+      "sidebar": "oklch(0.22 0.01 52.96)",
+      "sidebar-foreground": "oklch(0.97 0 0)",
+      "sidebar-primary": "oklch(0.51 0.19 27.52)",
+      "sidebar-primary-foreground": "oklch(0.98 0 0)",
+      "sidebar-accent": "oklch(0.56 0.15 49.06)",
+      "sidebar-accent-foreground": "oklch(0.96 0.06 94.84)",
+      "sidebar-border": "oklch(0.37 0.01 73.58)",
+      "sidebar-ring": "oklch(0.51 0.19 27.52)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+
+.theme-ghibli-studio {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "elegant-luxury",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Poppins, sans-serif",
+      "font-mono": "IBM Plex Mono, monospace",
+      "font-serif": "Libre Baskerville, serif",
+      "radius": "0.375rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.98 0 0)",
+      "foreground": "oklch(0.22 0 0)",
+      "card": "oklch(0.98 0 0)",
+      "card-foreground": "oklch(0.22 0 0)",
+      "popover": "oklch(0.98 0 0)",
+      "popover-foreground": "oklch(0.22 0 0)",
+      "primary": "oklch(0.47 0.15 25.06)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.96 0.04 88.18)",
+      "secondary-foreground": "oklch(0.48 0.10 75.09)",
+      "muted": "oklch(0.94 0.01 48.70)",
+      "muted-foreground": "oklch(0.44 0.01 73.63)",
+      "accent": "oklch(0.96 0.06 94.84)",
+      "accent-foreground": "oklch(0.40 0.13 25.81)",
+      "destructive": "oklch(0.44 0.16 26.84)",
+      "border": "oklch(0.94 0.03 81.74)",
+      "input": "oklch(0.94 0.03 81.74)",
+      "ring": "oklch(0.47 0.15 25.06)",
+      "chart-1": "oklch(0.51 0.19 27.52)",
+      "chart-2": "oklch(0.47 0.15 25.06)",
+      "chart-3": "oklch(0.40 0.13 25.81)",
+      "chart-4": "oklch(0.56 0.15 49.06)",
+      "chart-5": "oklch(0.47 0.12 46.52)",
+      "radius": "0.375rem",
+      "sidebar": "oklch(0.94 0.01 48.70)",
+      "sidebar-foreground": "oklch(0.22 0 0)",
+      "sidebar-primary": "oklch(0.47 0.15 25.06)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.96 0.06 94.84)",
+      "sidebar-accent-foreground": "oklch(0.40 0.13 25.81)",
+      "sidebar-border": "oklch(0.94 0.03 81.74)",
+      "sidebar-ring": "oklch(0.47 0.15 25.06)",
+      "font-sans": "Poppins, sans-serif",
+      "font-serif": "Libre Baskerville, serif",
+      "font-mono": "IBM Plex Mono, monospace",
+      "shadow-color": "hsl(0 63% 18%)",
+      "shadow-opacity": "0.12",
+      "shadow-blur": "16px",
+      "shadow-spread": "-2px",
+      "shadow-offset-x": "1px",
+      "shadow-offset-y": "1px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.06)",
+      "shadow-xs": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.06)",
+      "shadow-sm": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 1px 2px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 1px 2px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow-md": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 2px 4px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow-lg": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 4px 6px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow-xl": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.12), 1px 8px 10px -3px oklch(0.28 0.09 24.83 / 0.12)",
+      "shadow-2xl": "1px 1px 16px -2px oklch(0.28 0.09 24.83 / 0.30)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.22 0.01 52.96)",
+      "foreground": "oklch(0.97 0 0)",
+      "card": "oklch(0.27 0.01 39.35)",
+      "card-foreground": "oklch(0.97 0 0)",
+      "popover": "oklch(0.27 0.01 39.35)",
+      "popover-foreground": "oklch(0.97 0 0)",
+      "primary": "oklch(0.51 0.19 27.52)",
+      "primary-foreground": "oklch(0.98 0 0)",
+      "secondary": "oklch(0.47 0.12 46.52)",
+      "secondary-foreground": "oklch(0.96 0.06 94.84)",
+      "muted": "oklch(0.27 0.01 39.35)",
+      "muted-foreground": "oklch(0.87 0 0)",
+      "accent": "oklch(0.56 0.15 49.06)",
+      "accent-foreground": "oklch(0.96 0.06 94.84)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.37 0.01 73.58)",
+      "input": "oklch(0.37 0.01 73.58)",
+      "ring": "oklch(0.51 0.19 27.52)",
+      "chart-1": "oklch(0.71 0.17 21.96)",
+      "chart-2": "oklch(0.64 0.21 25.39)",
+      "chart-3": "oklch(0.58 0.22 27.29)",
+      "chart-4": "oklch(0.84 0.16 84.06)",
+      "chart-5": "oklch(0.77 0.16 69.82)",
+      "sidebar": "oklch(0.22 0.01 52.96)",
+      "sidebar-foreground": "oklch(0.97 0 0)",
+      "sidebar-primary": "oklch(0.51 0.19 27.52)",
+      "sidebar-primary-foreground": "oklch(0.98 0 0)",
+      "sidebar-accent": "oklch(0.56 0.15 49.06)",
+      "sidebar-accent-foreground": "oklch(0.96 0.06 94.84)",
+      "sidebar-border": "oklch(0.37 0.01 73.58)",
+      "sidebar-ring": "oklch(0.51 0.19 27.52)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+}
+
+.theme-midnight-bloom {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "midnight-bloom",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Montserrat, sans-serif",
+      "font-mono": "Source Code Pro, monospace",
+      "font-serif": "Playfair Display, serif",
+      "radius": "0.5rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.98 0 0)",
+      "foreground": "oklch(0.32 0 0)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.32 0 0)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.32 0 0)",
+      "primary": "oklch(0.57 0.20 283.26)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.82 0.07 249.99)",
+      "secondary-foreground": "oklch(0.32 0 0)",
+      "muted": "oklch(0.82 0.02 90.54)",
+      "muted-foreground": "oklch(0.54 0 0)",
+      "accent": "oklch(0.65 0.06 117.02)",
+      "accent-foreground": "oklch(1.00 0 0)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.87 0 0)",
+      "input": "oklch(0.87 0 0)",
+      "ring": "oklch(0.57 0.20 283.26)",
+      "chart-1": "oklch(0.57 0.20 283.26)",
+      "chart-2": "oklch(0.53 0.17 314.68)",
+      "chart-3": "oklch(0.34 0.18 301.34)",
+      "chart-4": "oklch(0.67 0.14 261.15)",
+      "chart-5": "oklch(0.59 0.10 245.35)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.98 0 0)",
+      "sidebar-foreground": "oklch(0.32 0 0)",
+      "sidebar-primary": "oklch(0.57 0.20 283.26)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.65 0.06 117.02)",
+      "sidebar-accent-foreground": "oklch(1.00 0 0)",
+      "sidebar-border": "oklch(0.87 0 0)",
+      "sidebar-ring": "oklch(0.57 0.20 283.26)",
+      "font-sans": "Montserrat, sans-serif",
+      "font-serif": "Playfair Display, serif",
+      "font-mono": "Source Code Pro, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "10px",
+      "shadow-spread": "-2px",
+      "shadow-offset-x": "0px",
+      "shadow-offset-y": "5px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0px 5px 10px -2px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0px 5px 10px -2px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0px 5px 10px -2px oklch(0.00 0 0 / 0.10), 0px 1px 2px -3px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0px 5px 10px -2px oklch(0.00 0 0 / 0.10), 0px 1px 2px -3px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0px 5px 10px -2px oklch(0.00 0 0 / 0.10), 0px 2px 4px -3px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0px 5px 10px -2px oklch(0.00 0 0 / 0.10), 0px 4px 6px -3px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0px 5px 10px -2px oklch(0.00 0 0 / 0.10), 0px 8px 10px -3px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0px 5px 10px -2px oklch(0.00 0 0 / 0.25)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.23 0.01 268.25)",
+      "foreground": "oklch(0.92 0 0)",
+      "card": "oklch(0.32 0.01 229.15)",
+      "card-foreground": "oklch(0.92 0 0)",
+      "popover": "oklch(0.32 0.01 229.15)",
+      "popover-foreground": "oklch(0.92 0 0)",
+      "primary": "oklch(0.57 0.20 283.26)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.34 0.18 301.34)",
+      "secondary-foreground": "oklch(0.92 0 0)",
+      "muted": "oklch(0.39 0 0)",
+      "muted-foreground": "oklch(0.72 0 0)",
+      "accent": "oklch(0.67 0.14 261.15)",
+      "accent-foreground": "oklch(0.92 0 0)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.39 0 0)",
+      "input": "oklch(0.39 0 0)",
+      "ring": "oklch(0.57 0.20 283.26)",
+      "chart-1": "oklch(0.57 0.20 283.26)",
+      "chart-2": "oklch(0.53 0.17 314.68)",
+      "chart-3": "oklch(0.34 0.18 301.34)",
+      "chart-4": "oklch(0.67 0.14 261.15)",
+      "chart-5": "oklch(0.59 0.10 245.35)",
+      "sidebar": "oklch(0.23 0.01 268.25)",
+      "sidebar-foreground": "oklch(0.92 0 0)",
+      "sidebar-primary": "oklch(0.57 0.20 283.26)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.67 0.14 261.15)",
+      "sidebar-accent-foreground": "oklch(0.92 0 0)",
+      "sidebar-border": "oklch(0.39 0 0)",
+      "sidebar-ring": "oklch(0.57 0.20 283.26)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+}
+
+.theme-modern-minimal {
+  {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "modern-minimal",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "JetBrains Mono, monospace",
+      "font-serif": "Source Serif 4, serif",
+      "radius": "0.375rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(1.00 0 0)",
+      "foreground": "oklch(0.32 0 0)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.32 0 0)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.32 0 0)",
+      "primary": "oklch(0.62 0.19 259.76)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.97 0 0)",
+      "secondary-foreground": "oklch(0.45 0.03 257.68)",
+      "muted": "oklch(0.98 0 0)",
+      "muted-foreground": "oklch(0.55 0.02 264.41)",
+      "accent": "oklch(0.95 0.03 233.56)",
+      "accent-foreground": "oklch(0.38 0.14 265.59)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.93 0.01 261.82)",
+      "input": "oklch(0.93 0.01 261.82)",
+      "ring": "oklch(0.62 0.19 259.76)",
+      "chart-1": "oklch(0.62 0.19 259.76)",
+      "chart-2": "oklch(0.55 0.22 262.96)",
+      "chart-3": "oklch(0.49 0.22 264.43)",
+      "chart-4": "oklch(0.42 0.18 265.55)",
+      "chart-5": "oklch(0.38 0.14 265.59)",
+      "radius": "0.375rem",
+      "sidebar": "oklch(0.98 0 0)",
+      "sidebar-foreground": "oklch(0.14 0 0)",
+      "sidebar-primary": "oklch(0.20 0 0)",
+      "sidebar-primary-foreground": "oklch(0.98 0 0)",
+      "sidebar-accent": "oklch(0.97 0 0)",
+      "sidebar-accent-foreground": "oklch(0.20 0 0)",
+      "sidebar-border": "oklch(0.92 0 0)",
+      "sidebar-ring": "oklch(0.71 0 0)",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "Source Serif 4, serif",
+      "font-mono": "JetBrains Mono, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.20 0 0)",
+      "foreground": "oklch(0.92 0 0)",
+      "card": "oklch(0.27 0 0)",
+      "card-foreground": "oklch(0.92 0 0)",
+      "popover": "oklch(0.27 0 0)",
+      "popover-foreground": "oklch(0.92 0 0)",
+      "primary": "oklch(0.62 0.19 259.76)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.27 0 0)",
+      "secondary-foreground": "oklch(0.92 0 0)",
+      "muted": "oklch(0.27 0 0)",
+      "muted-foreground": "oklch(0.72 0 0)",
+      "accent": "oklch(0.38 0.14 265.59)",
+      "accent-foreground": "oklch(0.88 0.06 254.63)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.37 0 0)",
+      "input": "oklch(0.37 0 0)",
+      "ring": "oklch(0.62 0.19 259.76)",
+      "chart-1": "oklch(0.71 0.14 254.69)",
+      "chart-2": "oklch(0.62 0.19 259.76)",
+      "chart-3": "oklch(0.55 0.22 262.96)",
+      "chart-4": "oklch(0.49 0.22 264.43)",
+      "chart-5": "oklch(0.42 0.18 265.55)",
+      "sidebar": "oklch(0.21 0.01 285.56)",
+      "sidebar-foreground": "oklch(0.99 0 0)",
+      "sidebar-primary": "oklch(0.49 0.24 264.41)",
+      "sidebar-primary-foreground": "oklch(0.99 0 0)",
+      "sidebar-accent": "oklch(0.27 0.01 285.81)",
+      "sidebar-accent-foreground": "oklch(0.99 0 0)",
+      "sidebar-border": "oklch(1.00 0 0 / 10%)",
+      "sidebar-ring": "oklch(0.55 0.02 285.76)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+
+.theme-nature {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "nature",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Montserrat, sans-serif",
+      "font-mono": "Source Code Pro, monospace",
+      "font-serif": "Merriweather, serif",
+      "radius": "0.5rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.97 0.01 81.76)",
+      "foreground": "oklch(0.30 0.04 29.20)",
+      "card": "oklch(0.97 0.01 81.76)",
+      "card-foreground": "oklch(0.30 0.04 29.20)",
+      "popover": "oklch(0.97 0.01 81.76)",
+      "popover-foreground": "oklch(0.30 0.04 29.20)",
+      "primary": "oklch(0.52 0.13 144.33)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.96 0.02 147.54)",
+      "secondary-foreground": "oklch(0.43 0.12 144.33)",
+      "muted": "oklch(0.94 0.01 72.65)",
+      "muted-foreground": "oklch(0.45 0.05 38.69)",
+      "accent": "oklch(0.90 0.05 146.01)",
+      "accent-foreground": "oklch(0.43 0.12 144.33)",
+      "destructive": "oklch(0.54 0.19 26.90)",
+      "border": "oklch(0.88 0.02 77.29)",
+      "input": "oklch(0.88 0.02 77.29)",
+      "ring": "oklch(0.52 0.13 144.33)",
+      "chart-1": "oklch(0.67 0.16 144.06)",
+      "chart-2": "oklch(0.58 0.14 144.14)",
+      "chart-3": "oklch(0.52 0.13 144.33)",
+      "chart-4": "oklch(0.43 0.12 144.33)",
+      "chart-5": "oklch(0.22 0.05 145.19)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.94 0.01 72.65)",
+      "sidebar-foreground": "oklch(0.30 0.04 29.20)",
+      "sidebar-primary": "oklch(0.52 0.13 144.33)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.90 0.05 146.01)",
+      "sidebar-accent-foreground": "oklch(0.43 0.12 144.33)",
+      "sidebar-border": "oklch(0.88 0.02 77.29)",
+      "sidebar-ring": "oklch(0.52 0.13 144.33)",
+      "font-sans": "Montserrat, sans-serif",
+      "font-serif": "Merriweather, serif",
+      "font-mono": "Source Code Pro, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.27 0.03 150.18)",
+      "foreground": "oklch(0.94 0.01 72.65)",
+      "card": "oklch(0.33 0.03 146.53)",
+      "card-foreground": "oklch(0.94 0.01 72.65)",
+      "popover": "oklch(0.33 0.03 146.53)",
+      "popover-foreground": "oklch(0.94 0.01 72.65)",
+      "primary": "oklch(0.67 0.16 144.06)",
+      "primary-foreground": "oklch(0.22 0.05 145.19)",
+      "secondary": "oklch(0.39 0.03 143.09)",
+      "secondary-foreground": "oklch(0.90 0.02 142.94)",
+      "muted": "oklch(0.33 0.03 146.53)",
+      "muted-foreground": "oklch(0.86 0.02 77.29)",
+      "accent": "oklch(0.58 0.14 144.14)",
+      "accent-foreground": "oklch(0.94 0.01 72.65)",
+      "destructive": "oklch(0.54 0.19 26.90)",
+      "border": "oklch(0.39 0.03 143.09)",
+      "input": "oklch(0.39 0.03 143.09)",
+      "ring": "oklch(0.67 0.16 144.06)",
+      "chart-1": "oklch(0.77 0.12 145.23)",
+      "chart-2": "oklch(0.72 0.14 144.92)",
+      "chart-3": "oklch(0.67 0.16 144.06)",
+      "chart-4": "oklch(0.63 0.15 144.32)",
+      "chart-5": "oklch(0.58 0.14 144.14)",
+      "sidebar": "oklch(0.27 0.03 150.18)",
+      "sidebar-foreground": "oklch(0.94 0.01 72.65)",
+      "sidebar-primary": "oklch(0.67 0.16 144.06)",
+      "sidebar-primary-foreground": "oklch(0.22 0.05 145.19)",
+      "sidebar-accent": "oklch(0.58 0.14 144.14)",
+      "sidebar-accent-foreground": "oklch(0.94 0.01 72.65)",
+      "sidebar-border": "oklch(0.39 0.03 143.09)",
+      "sidebar-ring": "oklch(0.67 0.16 144.06)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+}
+
+.theme-neo-brutalism {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "neo-brutalism",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "DM Sans, sans-serif",
+      "font-mono": "Space Mono, monospace",
+      "font-serif": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "0px",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(1.00 0 0)",
+      "foreground": "oklch(0 0 0)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0 0 0)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0 0 0)",
+      "primary": "oklch(0.65 0.24 26.92)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.97 0.21 109.74)",
+      "secondary-foreground": "oklch(0 0 0)",
+      "muted": "oklch(0.96 0 0)",
+      "muted-foreground": "oklch(0.32 0 0)",
+      "accent": "oklch(0.56 0.24 260.83)",
+      "accent-foreground": "oklch(1.00 0 0)",
+      "destructive": "oklch(0 0 0)",
+      "border": "oklch(0 0 0)",
+      "input": "oklch(0 0 0)",
+      "ring": "oklch(0.65 0.24 26.92)",
+      "chart-1": "oklch(0.65 0.24 26.92)",
+      "chart-2": "oklch(0.97 0.21 109.74)",
+      "chart-3": "oklch(0.56 0.24 260.83)",
+      "chart-4": "oklch(0.73 0.25 142.50)",
+      "chart-5": "oklch(0.59 0.27 328.36)",
+      "radius": "0px",
+      "sidebar": "oklch(0.96 0 0)",
+      "sidebar-foreground": "oklch(0 0 0)",
+      "sidebar-primary": "oklch(0.65 0.24 26.92)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.56 0.24 260.83)",
+      "sidebar-accent-foreground": "oklch(1.00 0 0)",
+      "sidebar-border": "oklch(0 0 0)",
+      "sidebar-ring": "oklch(0.65 0.24 26.92)",
+      "font-sans": "DM Sans, sans-serif",
+      "font-serif": "ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "Space Mono, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "1",
+      "shadow-blur": "0px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "4px",
+      "shadow-offset-y": "4px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "4px 4px 0px 0px oklch(0.00 0 0 / 0.50)",
+      "shadow-xs": "4px 4px 0px 0px oklch(0.00 0 0 / 0.50)",
+      "shadow-sm": "4px 4px 0px 0px oklch(0.00 0 0 / 1.00), 4px 1px 2px -1px oklch(0.00 0 0 / 1.00)",
+      "shadow": "4px 4px 0px 0px oklch(0.00 0 0 / 1.00), 4px 1px 2px -1px oklch(0.00 0 0 / 1.00)",
+      "shadow-md": "4px 4px 0px 0px oklch(0.00 0 0 / 1.00), 4px 2px 4px -1px oklch(0.00 0 0 / 1.00)",
+      "shadow-lg": "4px 4px 0px 0px oklch(0.00 0 0 / 1.00), 4px 4px 6px -1px oklch(0.00 0 0 / 1.00)",
+      "shadow-xl": "4px 4px 0px 0px oklch(0.00 0 0 / 1.00), 4px 8px 10px -1px oklch(0.00 0 0 / 1.00)",
+      "shadow-2xl": "4px 4px 0px 0px oklch(0.00 0 0 / 2.50)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0 0 0)",
+      "foreground": "oklch(1.00 0 0)",
+      "card": "oklch(0.32 0 0)",
+      "card-foreground": "oklch(1.00 0 0)",
+      "popover": "oklch(0.32 0 0)",
+      "popover-foreground": "oklch(1.00 0 0)",
+      "primary": "oklch(0.70 0.19 23.04)",
+      "primary-foreground": "oklch(0 0 0)",
+      "secondary": "oklch(0.97 0.20 109.61)",
+      "secondary-foreground": "oklch(0 0 0)",
+      "muted": "oklch(0.32 0 0)",
+      "muted-foreground": "oklch(0.85 0 0)",
+      "accent": "oklch(0.68 0.18 251.63)",
+      "accent-foreground": "oklch(0 0 0)",
+      "destructive": "oklch(1.00 0 0)",
+      "border": "oklch(1.00 0 0)",
+      "input": "oklch(1.00 0 0)",
+      "ring": "oklch(0.70 0.19 23.04)",
+      "chart-1": "oklch(0.70 0.19 23.04)",
+      "chart-2": "oklch(0.97 0.20 109.61)",
+      "chart-3": "oklch(0.68 0.18 251.63)",
+      "chart-4": "oklch(0.74 0.23 142.87)",
+      "chart-5": "oklch(0.61 0.25 328.13)",
+      "sidebar": "oklch(0 0 0)",
+      "sidebar-foreground": "oklch(1.00 0 0)",
+      "sidebar-primary": "oklch(0.70 0.19 23.04)",
+      "sidebar-primary-foreground": "oklch(0 0 0)",
+      "sidebar-accent": "oklch(0.68 0.18 251.63)",
+      "sidebar-accent-foreground": "oklch(0 0 0)",
+      "sidebar-border": "oklch(1.00 0 0)",
+      "sidebar-ring": "oklch(0.70 0.19 23.04)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+.theme-northern-lights {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "northern-lights",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "0.5rem"
+    },
+    "light": {
+      "background": "oklch(0.98 0 0)",
+      "foreground": "oklch(0.32 0 0)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.32 0 0)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.32 0 0)",
+      "primary": "oklch(0.65 0.15 150.30)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.67 0.14 261.34)",
+      "secondary-foreground": "oklch(1.00 0 0)",
+      "muted": "oklch(0.88 0.03 98.07)",
+      "muted-foreground": "oklch(0.54 0 0)",
+      "accent": "oklch(0.83 0.11 211.95)",
+      "accent-foreground": "oklch(0.32 0 0)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.87 0 0)",
+      "input": "oklch(0.87 0 0)",
+      "ring": "oklch(0.65 0.15 150.30)",
+      "chart-1": "oklch(0.65 0.15 150.30)",
+      "chart-2": "oklch(0.67 0.14 261.34)",
+      "chart-3": "oklch(0.83 0.11 211.95)",
+      "chart-4": "oklch(0.59 0.10 245.73)",
+      "chart-5": "oklch(0.59 0.16 148.24)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.98 0 0)",
+      "sidebar-foreground": "oklch(0.32 0 0)",
+      "sidebar-primary": "oklch(0.65 0.15 150.30)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.83 0.11 211.95)",
+      "sidebar-accent-foreground": "oklch(0.32 0 0)",
+      "sidebar-border": "oklch(0.87 0 0)",
+      "sidebar-ring": "oklch(0.65 0.15 150.30)",
+      "font-sans": "Plus Jakarta Sans, sans-serif",
+      "font-serif": "Source Serif 4, serif",
+      "font-mono": "JetBrains Mono, monospace"
+    },
+    "dark": {
+      "background": "oklch(0.23 0.01 264.30)",
+      "foreground": "oklch(0.92 0 0)",
+      "card": "oklch(0.32 0.01 223.62)",
+      "card-foreground": "oklch(0.92 0 0)",
+      "popover": "oklch(0.32 0.01 223.62)",
+      "popover-foreground": "oklch(0.92 0 0)",
+      "primary": "oklch(0.65 0.15 150.30)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.59 0.10 245.73)",
+      "secondary-foreground": "oklch(0.92 0 0)",
+      "muted": "oklch(0.39 0 0)",
+      "muted-foreground": "oklch(0.72 0 0)",
+      "accent": "oklch(0.67 0.14 261.34)",
+      "accent-foreground": "oklch(0.92 0 0)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.39 0 0)",
+      "input": "oklch(0.39 0 0)",
+      "ring": "oklch(0.65 0.15 150.30)",
+      "chart-1": "oklch(0.65 0.15 150.30)",
+      "chart-2": "oklch(0.59 0.10 245.73)",
+      "chart-3": "oklch(0.67 0.14 261.34)",
+      "chart-4": "oklch(0.83 0.11 211.95)",
+      "chart-5": "oklch(0.59 0.16 148.24)",
+      "sidebar": "oklch(0.23 0.01 264.30)",
+      "sidebar-foreground": "oklch(0.92 0 0)",
+      "sidebar-primary": "oklch(0.65 0.15 150.30)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.67 0.14 261.34)",
+      "sidebar-accent-foreground": "oklch(0.92 0 0)",
+      "sidebar-border": "oklch(0.39 0 0)",
+      "sidebar-ring": "oklch(0.65 0.15 150.30)",
+      "radius": "0.5rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "css": {}
+}
+
+.theme-ocean-breeze {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ocean-breeze",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "0.5rem"
+    },
+    "light": {
+      "background": "oklch(0.98 0.01 244.22)",
+      "foreground": "oklch(0.37 0.03 259.73)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.37 0.03 259.73)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.37 0.03 259.73)",
+      "primary": "oklch(0.72 0.19 149.58)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.95 0.02 236.80)",
+      "secondary-foreground": "oklch(0.45 0.03 256.80)",
+      "muted": "oklch(0.97 0.00 264.70)",
+      "muted-foreground": "oklch(0.55 0.02 264.37)",
+      "accent": "oklch(0.95 0.05 163.01)",
+      "accent-foreground": "oklch(0.37 0.03 259.73)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.93 0.01 264.60)",
+      "input": "oklch(0.93 0.01 264.60)",
+      "ring": "oklch(0.72 0.19 149.58)",
+      "chart-1": "oklch(0.72 0.19 149.58)",
+      "chart-2": "oklch(0.70 0.15 162.47)",
+      "chart-3": "oklch(0.60 0.13 163.22)",
+      "chart-4": "oklch(0.51 0.10 165.61)",
+      "chart-5": "oklch(0.43 0.09 166.91)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.95 0.02 236.80)",
+      "sidebar-foreground": "oklch(0.37 0.03 259.73)",
+      "sidebar-primary": "oklch(0.72 0.19 149.58)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.95 0.05 163.01)",
+      "sidebar-accent-foreground": "oklch(0.37 0.03 259.73)",
+      "sidebar-border": "oklch(0.93 0.01 264.60)",
+      "sidebar-ring": "oklch(0.72 0.19 149.58)",
+      "font-sans": "DM Sans, sans-serif",
+      "font-serif": "Lora, serif",
+      "font-mono": "IBM Plex Mono, monospace"
+    },
+    "dark": {
+      "background": "oklch(0.21 0.04 265.76)",
+      "foreground": "oklch(0.87 0.01 258.36)",
+      "card": "oklch(0.28 0.04 260.03)",
+      "card-foreground": "oklch(0.87 0.01 258.36)",
+      "popover": "oklch(0.28 0.04 260.03)",
+      "popover-foreground": "oklch(0.87 0.01 258.36)",
+      "primary": "oklch(0.77 0.15 163.22)",
+      "primary-foreground": "oklch(0.21 0.04 265.76)",
+      "secondary": "oklch(0.34 0.03 260.91)",
+      "secondary-foreground": "oklch(0.71 0.01 286.14)",
+      "muted": "oklch(0.28 0.04 260.03)",
+      "muted-foreground": "oklch(0.55 0.02 264.37)",
+      "accent": "oklch(0.37 0.03 259.73)",
+      "accent-foreground": "oklch(0.71 0.01 286.14)",
+      "destructive": "oklch(0.64 0.21 25.33)",
+      "border": "oklch(0.45 0.03 256.80)",
+      "input": "oklch(0.45 0.03 256.80)",
+      "ring": "oklch(0.77 0.15 163.22)",
+      "chart-1": "oklch(0.77 0.15 163.22)",
+      "chart-2": "oklch(0.78 0.13 181.90)",
+      "chart-3": "oklch(0.72 0.19 149.58)",
+      "chart-4": "oklch(0.70 0.15 162.47)",
+      "chart-5": "oklch(0.60 0.13 163.22)",
+      "sidebar": "oklch(0.28 0.04 260.03)",
+      "sidebar-foreground": "oklch(0.87 0.01 258.36)",
+      "sidebar-primary": "oklch(0.77 0.15 163.22)",
+      "sidebar-primary-foreground": "oklch(0.21 0.04 265.76)",
+      "sidebar-accent": "oklch(0.37 0.03 259.73)",
+      "sidebar-accent-foreground": "oklch(0.71 0.01 286.14)",
+      "sidebar-border": "oklch(0.45 0.03 256.80)",
+      "sidebar-ring": "oklch(0.77 0.15 163.22)",
+      "radius": "0.5rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "css": {}
+}
+}
+
+.theme-pastel-dreams {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pastel-dreams",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Open Sans, sans-serif",
+      "font-mono": "IBM Plex Mono, monospace",
+      "font-serif": "Source Serif 4, serif",
+      "radius": "1.5rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.97 0.01 316.68)",
+      "foreground": "oklch(0.37 0.03 259.73)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.37 0.03 259.73)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.37 0.03 259.73)",
+      "primary": "oklch(0.71 0.16 293.40)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.91 0.05 306.07)",
+      "secondary-foreground": "oklch(0.45 0.03 257.68)",
+      "muted": "oklch(0.95 0.03 307.19)",
+      "muted-foreground": "oklch(0.55 0.02 264.41)",
+      "accent": "oklch(0.94 0.03 322.47)",
+      "accent-foreground": "oklch(0.37 0.03 259.73)",
+      "destructive": "oklch(0.81 0.10 19.47)",
+      "border": "oklch(0.91 0.05 306.07)",
+      "input": "oklch(0.91 0.05 306.07)",
+      "ring": "oklch(0.71 0.16 293.40)",
+      "chart-1": "oklch(0.71 0.16 293.40)",
+      "chart-2": "oklch(0.61 0.22 292.63)",
+      "chart-3": "oklch(0.54 0.25 293.03)",
+      "chart-4": "oklch(0.49 0.24 292.70)",
+      "chart-5": "oklch(0.43 0.21 292.63)",
+      "radius": "1.5rem",
+      "sidebar": "oklch(0.91 0.05 306.07)",
+      "sidebar-foreground": "oklch(0.37 0.03 259.73)",
+      "sidebar-primary": "oklch(0.71 0.16 293.40)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.94 0.03 322.47)",
+      "sidebar-accent-foreground": "oklch(0.37 0.03 259.73)",
+      "sidebar-border": "oklch(0.91 0.05 306.07)",
+      "sidebar-ring": "oklch(0.71 0.16 293.40)",
+      "font-sans": "Open Sans, sans-serif",
+      "font-serif": "Source Serif 4, serif",
+      "font-mono": "IBM Plex Mono, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.08",
+      "shadow-blur": "16px",
+      "shadow-spread": "-4px",
+      "shadow-offset-x": "0px",
+      "shadow-offset-y": "8px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0px 8px 16px -4px oklch(0.00 0 0 / 0.04)",
+      "shadow-xs": "0px 8px 16px -4px oklch(0.00 0 0 / 0.04)",
+      "shadow-sm": "0px 8px 16px -4px oklch(0.00 0 0 / 0.08), 0px 1px 2px -5px oklch(0.00 0 0 / 0.08)",
+      "shadow": "0px 8px 16px -4px oklch(0.00 0 0 / 0.08), 0px 1px 2px -5px oklch(0.00 0 0 / 0.08)",
+      "shadow-md": "0px 8px 16px -4px oklch(0.00 0 0 / 0.08), 0px 2px 4px -5px oklch(0.00 0 0 / 0.08)",
+      "shadow-lg": "0px 8px 16px -4px oklch(0.00 0 0 / 0.08), 0px 4px 6px -5px oklch(0.00 0 0 / 0.08)",
+      "shadow-xl": "0px 8px 16px -4px oklch(0.00 0 0 / 0.08), 0px 8px 10px -5px oklch(0.00 0 0 / 0.08)",
+      "shadow-2xl": "0px 8px 16px -4px oklch(0.00 0 0 / 0.20)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.22 0.01 52.96)",
+      "foreground": "oklch(0.93 0.03 273.66)",
+      "card": "oklch(0.28 0.03 307.25)",
+      "card-foreground": "oklch(0.93 0.03 273.66)",
+      "popover": "oklch(0.28 0.03 307.25)",
+      "popover-foreground": "oklch(0.93 0.03 273.66)",
+      "primary": "oklch(0.79 0.12 295.97)",
+      "primary-foreground": "oklch(0.22 0.01 52.96)",
+      "secondary": "oklch(0.34 0.04 309.13)",
+      "secondary-foreground": "oklch(0.87 0.01 261.81)",
+      "muted": "oklch(0.28 0.03 307.25)",
+      "muted-foreground": "oklch(0.71 0.02 261.33)",
+      "accent": "oklch(0.39 0.05 304.68)",
+      "accent-foreground": "oklch(0.87 0.01 261.81)",
+      "destructive": "oklch(0.81 0.10 19.47)",
+      "border": "oklch(0.34 0.04 309.13)",
+      "input": "oklch(0.34 0.04 309.13)",
+      "ring": "oklch(0.79 0.12 295.97)",
+      "chart-1": "oklch(0.79 0.12 295.97)",
+      "chart-2": "oklch(0.71 0.16 293.40)",
+      "chart-3": "oklch(0.61 0.22 292.63)",
+      "chart-4": "oklch(0.54 0.25 293.03)",
+      "chart-5": "oklch(0.49 0.24 292.70)",
+      "sidebar": "oklch(0.34 0.04 309.13)",
+      "sidebar-foreground": "oklch(0.93 0.03 273.66)",
+      "sidebar-primary": "oklch(0.79 0.12 295.97)",
+      "sidebar-primary-foreground": "oklch(0.22 0.01 52.96)",
+      "sidebar-accent": "oklch(0.39 0.05 304.68)",
+      "sidebar-accent-foreground": "oklch(0.87 0.01 261.81)",
+      "sidebar-border": "oklch(0.34 0.04 309.13)",
+      "sidebar-ring": "oklch(0.79 0.12 295.97)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+
+.theme-perplexity {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "perplexity",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Inter, sans-serif",
+      "font-mono": "Roboto Mono, monospace",
+      "font-serif": "Lora, serif",
+      "radius": "0.5rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.95 0.01 196.81)",
+      "foreground": "oklch(0.38 0.06 211.49)",
+      "card": "oklch(0.97 0.01 196.81)",
+      "card-foreground": "oklch(0.38 0.06 211.49)",
+      "popover": "oklch(0.97 0.01 196.81)",
+      "popover-foreground": "oklch(0.38 0.06 211.49)",
+      "primary": "oklch(0.72 0.12 210.36)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.97 0.01 247.91)",
+      "secondary-foreground": "oklch(0.14 0 0)",
+      "muted": "oklch(0.97 0.01 247.91)",
+      "muted-foreground": "oklch(0.55 0.04 256.40)",
+      "accent": "oklch(0.96 0.02 204.34)",
+      "accent-foreground": "oklch(0.57 0.10 213.73)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.93 0.01 256.71)",
+      "input": "oklch(0.93 0.01 256.71)",
+      "ring": "oklch(0.72 0.12 210.36)",
+      "chart-1": "oklch(0.72 0.12 210.36)",
+      "chart-2": "oklch(0.57 0.10 213.73)",
+      "chart-3": "oklch(0.79 0.12 209.45)",
+      "chart-4": "oklch(0.76 0.11 208.70)",
+      "chart-5": "oklch(0.83 0.10 208.33)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.98 0 0)",
+      "sidebar-foreground": "oklch(0.14 0 0)",
+      "sidebar-primary": "oklch(0.72 0.12 210.36)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.96 0.02 204.34)",
+      "sidebar-accent-foreground": "oklch(0.57 0.10 213.73)",
+      "sidebar-border": "oklch(0.93 0.01 256.71)",
+      "sidebar-ring": "oklch(0.72 0.12 210.36)",
+      "font-sans": "Inter, sans-serif",
+      "font-serif": "Lora, serif",
+      "font-mono": "Roboto Mono, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.21 0.02 226.02)",
+      "foreground": "oklch(0.85 0.13 194.97)",
+      "card": "oklch(0.23 0.03 218.18)",
+      "card-foreground": "oklch(0.85 0.13 194.97)",
+      "popover": "oklch(0.23 0.03 218.18)",
+      "popover-foreground": "oklch(0.85 0.13 194.97)",
+      "primary": "oklch(0.72 0.12 210.36)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.27 0.01 285.81)",
+      "secondary-foreground": "oklch(0.97 0 0)",
+      "muted": "oklch(0.24 0 0)",
+      "muted-foreground": "oklch(0.71 0.01 286.23)",
+      "accent": "oklch(0.24 0 0)",
+      "accent-foreground": "oklch(0.97 0 0)",
+      "destructive": "oklch(0.64 0.21 25.39)",
+      "border": "oklch(0.29 0 0)",
+      "input": "oklch(0.29 0 0)",
+      "ring": "oklch(0.72 0.12 210.36)",
+      "chart-1": "oklch(0.72 0.12 210.36)",
+      "chart-2": "oklch(0.79 0.12 209.45)",
+      "chart-3": "oklch(0.76 0.11 208.70)",
+      "chart-4": "oklch(0.83 0.10 208.33)",
+      "chart-5": "oklch(0.57 0.10 213.73)",
+      "sidebar": "oklch(0.19 0 0)",
+      "sidebar-foreground": "oklch(0.97 0 0)",
+      "sidebar-primary": "oklch(0.72 0.12 210.36)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.24 0 0)",
+      "sidebar-accent-foreground": "oklch(0.97 0 0)",
+      "sidebar-border": "oklch(0.29 0 0)",
+      "sidebar-ring": "oklch(0.72 0.12 210.36)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+}
+
+.theme-retro-arcade {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "retro-arcade",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "0.25rem"
+    },
+    "light": {
+      "background": "oklch(0.97 0.03 90.07)",
+      "foreground": "oklch(0.31 0.05 219.64)",
+      "card": "oklch(0.93 0.03 92.37)",
+      "card-foreground": "oklch(0.31 0.05 219.64)",
+      "popover": "oklch(0.93 0.03 92.37)",
+      "popover-foreground": "oklch(0.31 0.05 219.64)",
+      "primary": "oklch(0.59 0.20 355.90)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.64 0.10 187.37)",
+      "secondary-foreground": "oklch(1.00 0 0)",
+      "muted": "oklch(0.70 0.02 196.71)",
+      "muted-foreground": "oklch(0.31 0.05 219.64)",
+      "accent": "oklch(0.58 0.17 39.50)",
+      "accent-foreground": "oklch(1.00 0 0)",
+      "destructive": "oklch(0.59 0.21 27.12)",
+      "border": "oklch(0.65 0.02 205.20)",
+      "input": "oklch(0.65 0.02 205.20)",
+      "ring": "oklch(0.59 0.20 355.90)",
+      "chart-1": "oklch(0.61 0.14 244.92)",
+      "chart-2": "oklch(0.64 0.10 187.37)",
+      "chart-3": "oklch(0.59 0.20 355.90)",
+      "chart-4": "oklch(0.58 0.17 39.50)",
+      "chart-5": "oklch(0.59 0.21 27.12)",
+      "radius": "0.25rem",
+      "sidebar": "oklch(0.97 0.03 90.07)",
+      "sidebar-foreground": "oklch(0.31 0.05 219.64)",
+      "sidebar-primary": "oklch(0.59 0.20 355.90)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.64 0.10 187.37)",
+      "sidebar-accent-foreground": "oklch(1.00 0 0)",
+      "sidebar-border": "oklch(0.65 0.02 205.20)",
+      "sidebar-ring": "oklch(0.59 0.20 355.90)",
+      "font-sans": "Outfit, sans-serif",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "Space Mono, monospace"
+    },
+    "dark": {
+      "background": "oklch(0.27 0.05 219.80)",
+      "foreground": "oklch(0.70 0.02 196.71)",
+      "card": "oklch(0.31 0.05 219.64)",
+      "card-foreground": "oklch(0.70 0.02 196.71)",
+      "popover": "oklch(0.31 0.05 219.64)",
+      "popover-foreground": "oklch(0.70 0.02 196.71)",
+      "primary": "oklch(0.59 0.20 355.90)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.64 0.10 187.37)",
+      "secondary-foreground": "oklch(1.00 0 0)",
+      "muted": "oklch(0.52 0.03 219.11)",
+      "muted-foreground": "oklch(0.70 0.02 196.71)",
+      "accent": "oklch(0.58 0.17 39.50)",
+      "accent-foreground": "oklch(1.00 0 0)",
+      "destructive": "oklch(0.59 0.21 27.12)",
+      "border": "oklch(0.52 0.03 219.11)",
+      "input": "oklch(0.52 0.03 219.11)",
+      "ring": "oklch(0.59 0.20 355.90)",
+      "chart-1": "oklch(0.61 0.14 244.92)",
+      "chart-2": "oklch(0.64 0.10 187.37)",
+      "chart-3": "oklch(0.59 0.20 355.90)",
+      "chart-4": "oklch(0.58 0.17 39.50)",
+      "chart-5": "oklch(0.59 0.21 27.12)",
+      "sidebar": "oklch(0.27 0.05 219.80)",
+      "sidebar-foreground": "oklch(0.70 0.02 196.71)",
+      "sidebar-primary": "oklch(0.59 0.20 355.90)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.64 0.10 187.37)",
+      "sidebar-accent-foreground": "oklch(1.00 0 0)",
+      "sidebar-border": "oklch(0.52 0.03 219.11)",
+      "sidebar-ring": "oklch(0.59 0.20 355.90)",
+      "radius": "0.25rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "css": {}
+}
+
+.theme-slack {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slack",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Lato, sans-serif",
+      "font-mono": "Roboto Mono, monospace",
+      "font-serif": "Merriweather, serif",
+      "radius": "0.5rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(1.00 0 0)",
+      "foreground": "oklch(0.23 0 0)",
+      "card": "oklch(0.98 0 0)",
+      "card-foreground": "oklch(0.23 0 0)",
+      "popover": "oklch(0.98 0 0)",
+      "popover-foreground": "oklch(0.23 0 0)",
+      "primary": "oklch(0.37 0.14 323.40)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.96 0.01 311.36)",
+      "secondary-foreground": "oklch(0.31 0.11 327.10)",
+      "muted": "oklch(0.97 0 0)",
+      "muted-foreground": "oklch(0.49 0 0)",
+      "accent": "oklch(0.88 0.02 323.34)",
+      "accent-foreground": "oklch(0.31 0.11 327.10)",
+      "destructive": "oklch(0.59 0.22 11.39)",
+      "border": "oklch(0.91 0 0)",
+      "input": "oklch(0.91 0 0)",
+      "ring": "oklch(0.37 0.14 323.40)",
+      "chart-1": "oklch(0.31 0.11 327.10)",
+      "chart-2": "oklch(0.37 0.14 323.40)",
+      "chart-3": "oklch(0.59 0.22 11.39)",
+      "chart-4": "oklch(0.77 0.13 222.66)",
+      "chart-5": "oklch(0.69 0.14 160.27)",
+      "radius": "0.5rem",
+      "sidebar": "oklch(0.96 0.01 311.36)",
+      "sidebar-foreground": "oklch(0.23 0 0)",
+      "sidebar-primary": "oklch(0.37 0.14 323.40)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.88 0.02 323.34)",
+      "sidebar-accent-foreground": "oklch(0.31 0.11 327.10)",
+      "sidebar-border": "oklch(0.91 0 0)",
+      "sidebar-ring": "oklch(0.37 0.14 323.40)",
+      "font-sans": "Lato, sans-serif",
+      "font-serif": "Merriweather, serif",
+      "font-mono": "Roboto Mono, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.23 0.01 260.69)",
+      "foreground": "oklch(0.93 0 0)",
+      "card": "oklch(0.26 0.01 260.70)",
+      "card-foreground": "oklch(0.93 0 0)",
+      "popover": "oklch(0.26 0.01 260.70)",
+      "popover-foreground": "oklch(0.93 0 0)",
+      "primary": "oklch(0.58 0.14 327.21)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.30 0.01 254.00)",
+      "secondary-foreground": "oklch(0.93 0 0)",
+      "muted": "oklch(0.26 0.01 260.70)",
+      "muted-foreground": "oklch(0.68 0 0)",
+      "accent": "oklch(0.33 0.03 326.28)",
+      "accent-foreground": "oklch(0.93 0 0)",
+      "destructive": "oklch(0.59 0.22 11.39)",
+      "border": "oklch(0.30 0.01 268.37)",
+      "input": "oklch(0.30 0.01 268.37)",
+      "ring": "oklch(0.58 0.14 327.21)",
+      "chart-1": "oklch(0.58 0.14 327.21)",
+      "chart-2": "oklch(0.77 0.13 222.66)",
+      "chart-3": "oklch(0.69 0.14 160.27)",
+      "chart-4": "oklch(0.59 0.22 11.39)",
+      "chart-5": "oklch(0.80 0.15 82.32)",
+      "sidebar": "oklch(0.23 0.01 260.69)",
+      "sidebar-foreground": "oklch(0.93 0 0)",
+      "sidebar-primary": "oklch(0.58 0.14 327.21)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.33 0.03 326.28)",
+      "sidebar-accent-foreground": "oklch(0.93 0 0)",
+      "sidebar-border": "oklch(0.30 0.01 268.37)",
+      "sidebar-ring": "oklch(0.58 0.14 327.21)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+}
+
+.theme-sunset-horizon {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sunset-horizon",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Montserrat, sans-serif",
+      "font-mono": "Ubuntu Mono, monospace",
+      "font-serif": "Merriweather, serif",
+      "radius": "0.625rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.99 0.01 67.74)",
+      "foreground": "oklch(0.34 0.01 7.89)",
+      "card": "oklch(1.00 0 0)",
+      "card-foreground": "oklch(0.34 0.01 7.89)",
+      "popover": "oklch(1.00 0 0)",
+      "popover-foreground": "oklch(0.34 0.01 7.89)",
+      "primary": "oklch(0.74 0.16 34.57)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.96 0.02 28.97)",
+      "secondary-foreground": "oklch(0.56 0.13 32.65)",
+      "muted": "oklch(0.97 0.02 44.86)",
+      "muted-foreground": "oklch(0.49 0.05 27.86)",
+      "accent": "oklch(0.83 0.11 57.89)",
+      "accent-foreground": "oklch(0.34 0.01 7.89)",
+      "destructive": "oklch(0.61 0.21 22.21)",
+      "border": "oklch(0.93 0.04 40.57)",
+      "input": "oklch(0.93 0.04 40.57)",
+      "ring": "oklch(0.74 0.16 34.57)",
+      "chart-1": "oklch(0.74 0.16 34.57)",
+      "chart-2": "oklch(0.83 0.11 57.89)",
+      "chart-3": "oklch(0.88 0.08 56.41)",
+      "chart-4": "oklch(0.82 0.11 41.27)",
+      "chart-5": "oklch(0.64 0.13 32.06)",
+      "radius": "0.625rem",
+      "sidebar": "oklch(0.97 0.02 44.86)",
+      "sidebar-foreground": "oklch(0.34 0.01 7.89)",
+      "sidebar-primary": "oklch(0.74 0.16 34.57)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.83 0.11 57.89)",
+      "sidebar-accent-foreground": "oklch(0.34 0.01 7.89)",
+      "sidebar-border": "oklch(0.93 0.04 40.57)",
+      "sidebar-ring": "oklch(0.74 0.16 34.57)",
+      "font-sans": "Montserrat, sans-serif",
+      "font-serif": "Merriweather, serif",
+      "font-mono": "Ubuntu Mono, monospace",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.09",
+      "shadow-blur": "12px",
+      "shadow-spread": "-3px",
+      "shadow-offset-x": "0px",
+      "shadow-offset-y": "6px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0px 6px 12px -3px oklch(0.00 0 0 / 0.04)",
+      "shadow-xs": "0px 6px 12px -3px oklch(0.00 0 0 / 0.04)",
+      "shadow-sm": "0px 6px 12px -3px oklch(0.00 0 0 / 0.09), 0px 1px 2px -4px oklch(0.00 0 0 / 0.09)",
+      "shadow": "0px 6px 12px -3px oklch(0.00 0 0 / 0.09), 0px 1px 2px -4px oklch(0.00 0 0 / 0.09)",
+      "shadow-md": "0px 6px 12px -3px oklch(0.00 0 0 / 0.09), 0px 2px 4px -4px oklch(0.00 0 0 / 0.09)",
+      "shadow-lg": "0px 6px 12px -3px oklch(0.00 0 0 / 0.09), 0px 4px 6px -4px oklch(0.00 0 0 / 0.09)",
+      "shadow-xl": "0px 6px 12px -3px oklch(0.00 0 0 / 0.09), 0px 8px 10px -4px oklch(0.00 0 0 / 0.09)",
+      "shadow-2xl": "0px 6px 12px -3px oklch(0.00 0 0 / 0.22)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.26 0.02 351.79)",
+      "foreground": "oklch(0.94 0.01 48.70)",
+      "card": "oklch(0.32 0.02 339.89)",
+      "card-foreground": "oklch(0.94 0.01 48.70)",
+      "popover": "oklch(0.32 0.02 339.89)",
+      "popover-foreground": "oklch(0.94 0.01 48.70)",
+      "primary": "oklch(0.74 0.16 34.57)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.36 0.02 342.33)",
+      "secondary-foreground": "oklch(0.94 0.01 48.70)",
+      "muted": "oklch(0.32 0.02 339.89)",
+      "muted-foreground": "oklch(0.84 0.02 50.14)",
+      "accent": "oklch(0.83 0.11 57.89)",
+      "accent-foreground": "oklch(0.26 0.02 351.79)",
+      "destructive": "oklch(0.61 0.21 22.21)",
+      "border": "oklch(0.36 0.02 342.33)",
+      "input": "oklch(0.36 0.02 342.33)",
+      "ring": "oklch(0.74 0.16 34.57)",
+      "chart-1": "oklch(0.74 0.16 34.57)",
+      "chart-2": "oklch(0.83 0.11 57.89)",
+      "chart-3": "oklch(0.88 0.08 56.41)",
+      "chart-4": "oklch(0.82 0.11 41.27)",
+      "chart-5": "oklch(0.64 0.13 32.06)",
+      "sidebar": "oklch(0.26 0.02 351.79)",
+      "sidebar-foreground": "oklch(0.94 0.01 48.70)",
+      "sidebar-primary": "oklch(0.74 0.16 34.57)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.83 0.11 57.89)",
+      "sidebar-accent-foreground": "oklch(0.26 0.02 351.79)",
+      "sidebar-border": "oklch(0.36 0.02 342.33)",
+      "sidebar-ring": "oklch(0.74 0.16 34.57)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+.theme-valorant {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "valorant",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "css": {
+    "@layer base": {
+      "body": {
+        "letter-spacing": "var(--tracking-normal)"
+      }
+    }
+  },
+  "cssVars": {
+    "theme": {
+      "font-sans": "Barlow",
+      "font-mono": "JetBrains Mono",
+      "font-serif": "Merriweather",
+      "radius": "0rem",
+      "tracking-tighter": "calc(var(--tracking-normal) - 0.05em)",
+      "tracking-tight": "calc(var(--tracking-normal) - 0.025em)",
+      "tracking-wide": "calc(var(--tracking-normal) + 0.025em)",
+      "tracking-wider": "calc(var(--tracking-normal) + 0.05em)",
+      "tracking-widest": "calc(var(--tracking-normal) + 0.1em)"
+    },
+    "light": {
+      "background": "oklch(0.97 0.02 12.89)",
+      "foreground": "oklch(0.24 0.07 17.95)",
+      "card": "oklch(0.98 0.01 17.50)",
+      "card-foreground": "oklch(0.26 0.07 19.47)",
+      "popover": "oklch(0.98 0.01 17.50)",
+      "popover-foreground": "oklch(0.26 0.07 19.47)",
+      "primary": "oklch(0.67 0.22 21.22)",
+      "primary-foreground": "oklch(0.99 0 0)",
+      "secondary": "oklch(0.95 0.02 10.30)",
+      "secondary-foreground": "oklch(0.24 0.07 17.95)",
+      "muted": "oklch(0.98 0.01 17.50)",
+      "muted-foreground": "oklch(0.26 0.07 19.47)",
+      "accent": "oklch(0.99 0 0)",
+      "accent-foreground": "oklch(0.43 0.13 20.48)",
+      "destructive": "oklch(0.80 0.17 73.59)",
+      "border": "oklch(0.91 0.05 10.24)",
+      "input": "oklch(0.90 0.05 11.99)",
+      "ring": "oklch(0.92 0.04 12.26)",
+      "chart-1": "oklch(0.86 0.18 88.48)",
+      "chart-2": "oklch(0.62 0.21 255.62)",
+      "chart-3": "oklch(0.54 0.29 297.65)",
+      "chart-4": "oklch(0.95 0.10 98.75)",
+      "chart-5": "oklch(0.87 0.12 100.10)",
+      "radius": "0rem",
+      "sidebar": "oklch(0.97 0.02 12.89)",
+      "sidebar-foreground": "oklch(0.26 0.07 19.47)",
+      "sidebar-primary": "oklch(0.67 0.22 21.22)",
+      "sidebar-primary-foreground": "oklch(0.98 0.01 17.50)",
+      "sidebar-accent": "oklch(0.98 0.01 17.50)",
+      "sidebar-accent-foreground": "oklch(0.43 0.13 20.48)",
+      "sidebar-border": "oklch(0.91 0.05 10.24)",
+      "sidebar-ring": "oklch(0.92 0.04 12.26)",
+      "font-sans": "Barlow",
+      "font-serif": "Merriweather",
+      "font-mono": "JetBrains Mono",
+      "shadow-color": "oklch(0.3 0.0891 19.6)",
+      "shadow-opacity": "0.08",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0px",
+      "shadow-offset-y": "0px",
+      "spacing": "0.25rem",
+      "shadow-2xs": "0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.04)",
+      "shadow-xs": "0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.04)",
+      "shadow-sm": "0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.08), 0px 1px 2px -1px oklch(0.30 0.09 19.60 / 0.08)",
+      "shadow": "0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.08), 0px 1px 2px -1px oklch(0.30 0.09 19.60 / 0.08)",
+      "shadow-md": "0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.08), 0px 2px 4px -1px oklch(0.30 0.09 19.60 / 0.08)",
+      "shadow-lg": "0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.08), 0px 4px 6px -1px oklch(0.30 0.09 19.60 / 0.08)",
+      "shadow-xl": "0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.08), 0px 8px 10px -1px oklch(0.30 0.09 19.60 / 0.08)",
+      "shadow-2xl": "0px 0px 3px 0px oklch(0.30 0.09 19.60 / 0.20)",
+      "tracking-normal": "0em"
+    },
+    "dark": {
+      "background": "oklch(0.16 0.03 16.52)",
+      "foreground": "oklch(0.99 0 0)",
+      "card": "oklch(0.21 0.05 18.42)",
+      "card-foreground": "oklch(0.98 0 0)",
+      "popover": "oklch(0.26 0.07 19.47)",
+      "popover-foreground": "oklch(0.99 0 0)",
+      "primary": "oklch(0.67 0.22 21.22)",
+      "primary-foreground": "oklch(0.99 0 0)",
+      "secondary": "oklch(0.30 0.09 19.60)",
+      "secondary-foreground": "oklch(0.95 0.02 10.30)",
+      "muted": "oklch(0.26 0.07 19.47)",
+      "muted-foreground": "oklch(0.99 0 0)",
+      "accent": "oklch(0.43 0.13 20.48)",
+      "accent-foreground": "oklch(0.99 0 0)",
+      "destructive": "oklch(0.80 0.17 73.59)",
+      "border": "oklch(0.31 0.09 19.47)",
+      "input": "oklch(0.39 0.12 20.38)",
+      "ring": "oklch(0.50 0.16 20.99)",
+      "chart-1": "oklch(0.86 0.18 88.48)",
+      "chart-2": "oklch(0.62 0.21 255.62)",
+      "chart-3": "oklch(0.54 0.29 297.65)",
+      "chart-4": "oklch(0.95 0.10 98.75)",
+      "chart-5": "oklch(0.87 0.12 100.10)",
+      "sidebar": "oklch(0.26 0.07 19.47)",
+      "sidebar-foreground": "oklch(0.99 0 0)",
+      "sidebar-primary": "oklch(0.67 0.22 21.22)",
+      "sidebar-primary-foreground": "oklch(0.99 0 0)",
+      "sidebar-accent": "oklch(0.43 0.13 20.48)",
+      "sidebar-accent-foreground": "oklch(0.99 0 0)",
+      "sidebar-border": "oklch(0.39 0.12 20.38)",
+      "sidebar-ring": "oklch(0.50 0.16 20.99)",
+      "shadow-color": "hsl(0 0% 0%)",
+      "shadow-opacity": "0.1",
+      "shadow-blur": "3px",
+      "shadow-spread": "0px",
+      "shadow-offset-x": "0",
+      "shadow-offset-y": "1px",
+      "letter-spacing": "0em",
+      "spacing": "0.25rem",
+      "radius": "0.625rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "shadow-2xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-xs": "0 1px 3px 0px oklch(0.00 0 0 / 0.05)",
+      "shadow-sm": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 1px 2px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-md": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 2px 4px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-lg": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 4px 6px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.10), 0 8px 10px -1px oklch(0.00 0 0 / 0.10)",
+      "shadow-2xl": "0 1px 3px 0px oklch(0.00 0 0 / 0.25)"
+    }
+  }
+}
+}
+
+.theme-vintage-paper {
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "vintage-paper",
+  "type": "registry:style",
+  "dependencies": [],
+  "registryDependencies": [],
+  "cssVars": {
+    "theme": {
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "radius": "0.25rem"
+    },
+    "light": {
+      "background": "oklch(0.96 0.02 90.19)",
+      "foreground": "oklch(0.38 0.02 64.34)",
+      "card": "oklch(0.99 0.01 87.41)",
+      "card-foreground": "oklch(0.38 0.02 64.34)",
+      "popover": "oklch(0.99 0.01 87.41)",
+      "popover-foreground": "oklch(0.38 0.02 64.34)",
+      "primary": "oklch(0.62 0.08 65.54)",
+      "primary-foreground": "oklch(1.00 0 0)",
+      "secondary": "oklch(0.88 0.03 85.55)",
+      "secondary-foreground": "oklch(0.43 0.03 64.93)",
+      "muted": "oklch(0.92 0.02 83.04)",
+      "muted-foreground": "oklch(0.54 0.04 71.16)",
+      "accent": "oklch(0.83 0.04 88.79)",
+      "accent-foreground": "oklch(0.38 0.02 64.34)",
+      "destructive": "oklch(0.55 0.14 32.92)",
+      "border": "oklch(0.86 0.03 84.57)",
+      "input": "oklch(0.86 0.03 84.57)",
+      "ring": "oklch(0.62 0.08 65.54)",
+      "chart-1": "oklch(0.62 0.08 65.54)",
+      "chart-2": "oklch(0.56 0.06 68.58)",
+      "chart-3": "oklch(0.49 0.06 72.68)",
+      "chart-4": "oklch(0.68 0.06 64.77)",
+      "chart-5": "oklch(0.73 0.06 66.69)",
+      "radius": "0.25rem",
+      "sidebar": "oklch(0.92 0.02 83.04)",
+      "sidebar-foreground": "oklch(0.38 0.02 64.34)",
+      "sidebar-primary": "oklch(0.62 0.08 65.54)",
+      "sidebar-primary-foreground": "oklch(1.00 0 0)",
+      "sidebar-accent": "oklch(0.83 0.04 88.79)",
+      "sidebar-accent-foreground": "oklch(0.38 0.02 64.34)",
+      "sidebar-border": "oklch(0.86 0.03 84.57)",
+      "sidebar-ring": "oklch(0.62 0.08 65.54)",
+      "font-sans": "Libre Baskerville, serif",
+      "font-serif": "Lora, serif",
+      "font-mono": "IBM Plex Mono, monospace"
+    },
+    "dark": {
+      "background": "oklch(0.27 0.01 57.66)",
+      "foreground": "oklch(0.92 0.02 83.04)",
+      "card": "oklch(0.32 0.02 59.07)",
+      "card-foreground": "oklch(0.92 0.02 83.04)",
+      "popover": "oklch(0.32 0.02 59.07)",
+      "popover-foreground": "oklch(0.92 0.02 83.04)",
+      "primary": "oklch(0.73 0.06 66.69)",
+      "primary-foreground": "oklch(0.27 0.01 57.66)",
+      "secondary": "oklch(0.38 0.02 57.13)",
+      "secondary-foreground": "oklch(0.92 0.02 83.04)",
+      "muted": "oklch(0.32 0.02 59.07)",
+      "muted-foreground": "oklch(0.80 0.02 82.09)",
+      "accent": "oklch(0.42 0.03 56.34)",
+      "accent-foreground": "oklch(0.92 0.02 83.04)",
+      "destructive": "oklch(0.55 0.14 32.92)",
+      "border": "oklch(0.38 0.02 57.13)",
+      "input": "oklch(0.38 0.02 57.13)",
+      "ring": "oklch(0.73 0.06 66.69)",
+      "chart-1": "oklch(0.73 0.06 66.69)",
+      "chart-2": "oklch(0.68 0.06 64.77)",
+      "chart-3": "oklch(0.62 0.08 65.54)",
+      "chart-4": "oklch(0.56 0.06 68.58)",
+      "chart-5": "oklch(0.49 0.06 72.68)",
+      "sidebar": "oklch(0.27 0.01 57.66)",
+      "sidebar-foreground": "oklch(0.92 0.02 83.04)",
+      "sidebar-primary": "oklch(0.73 0.06 66.69)",
+      "sidebar-primary-foreground": "oklch(0.27 0.01 57.66)",
+      "sidebar-accent": "oklch(0.42 0.03 56.34)",
+      "sidebar-accent-foreground": "oklch(0.92 0.02 83.04)",
+      "sidebar-border": "oklch(0.38 0.02 57.13)",
+      "sidebar-ring": "oklch(0.73 0.06 66.69)",
+      "radius": "0.25rem",
+      "font-sans": "'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      "font-serif": "\"Geist\", \"Geist Fallback\", ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif",
+      "font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    }
+  },
+  "css": {}
+}
+}

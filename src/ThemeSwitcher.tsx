@@ -78,7 +78,7 @@ const ThemeSwitcher = () => {
 			</button>
 			{open && (
 				<div
-					className="card max-h-[60vh] overflow-y-auto bg-surface-50-950 border border-surface-200-800 space-y-4 p-4 absolute right-0 top-12 z-50 w-72 shadow-xl"
+					className="card max-h-[60vh] overflow-y-auto bg-surface-50-950 border border-surface-200-800 space-y-4 p-4 absolute left-0 top-12 right-auto z-50 w-72 shadow-xl"
 					role="dialog"
 					style={{ minWidth: 'min(100vw, 260px)' }}
 				>

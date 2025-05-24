@@ -1,29 +1,30 @@
 import { useState } from 'react';
-import { Tabs } from '@skeletonlabs/skeleton-react';
 
-const weekdays = [
-  'Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'
-];
+const weekdayNames = 'MON TUE WED THU FRI SAT SUN'.split(' ');
 
-export default function Admin() {
-  const [selectedDay, setSelectedDay] = useState(new Date().getDay());
+function Admin() {
+  const [selectedDay, setSelectedDay] = useState(new Date().getDay() === 0 ? 6 : new Date().getDay() - 1);
   // TODO: Add state for rooms and staff, and drag-and-drop logic
   return (
-    <div className="min-h-screen flex flex-col p-4 bg-surface-50-950">
-      <h1 className="text-2xl font-bold mb-4">Admin: Planera bemanning</h1>
-      {/* TODO: Add draggable staff cards and room columns here */}
-      <div className="mt-auto w-full">
-        <hr className="my-4 border-surface-300" />
-        <Tabs value={weekdays[selectedDay]} onValueChange={e => setSelectedDay(weekdays.indexOf(e.value))}>
-          <Tabs.List>
-            {weekdays.map((day, idx) => (
-              <Tabs.Control key={day} value={day}>
-                <span className={`text-xs sm:text-sm px-2 py-1 rounded-md transition-all ${selectedDay === idx ? 'bg-primary-500 text-primary-50 z-10 relative' : 'opacity-60'}`}>{day}</span>
-              </Tabs.Control>
-            ))}
-          </Tabs.List>
-        </Tabs>
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
+      <div className="flex gap-2">
+        {weekdayNames.map((day, idx) => (
+          <button
+            key={day}
+            className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+              selectedDay === idx
+                ? 'bg-primary text-primary-foreground'
+                : 'text-muted-foreground hover:bg-accent'
+            }`}
+            onClick={() => setSelectedDay(idx)}
+          >
+            {day}
+          </button>
+        ))}
       </div>
     </div>
   );
 }
+
+export default Admin;
