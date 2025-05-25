@@ -28,13 +28,13 @@ import './themes/perplexity.css';
 import './themes/valorant.css';
 
 import Clock from './Clock';
-import Måndag from './Måndag';
-import Tisdag from './Tisdag';
-import Onsdag from './Onsdag';
-import Torsdag from './Torsdag';
-import Fredag from './Fredag';
-import Lördag from './Lördag';
-import Söndag from './Söndag';
+import Måndag from './components/Weekdays/Måndag';
+import Tisdag from './components/Weekdays/Tisdag';
+import Onsdag from './components/Weekdays/Onsdag';
+import Torsdag from './components/Weekdays/Torsdag';
+import Fredag from './components/Weekdays/Fredag';
+import Lördag from './components/Weekdays/Lördag';
+import Söndag from './components/Weekdays/Söndag';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const weekdays = [

@@ -1,7 +1,10 @@
+/* This file is generated. Please do not edit it directly. */
+
+/* ...existing code... */
 .theme-vintage-paper {
-  --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --font-serif: "Geist", "Geist Fallback", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: 'Libre Baskerville', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-serif: 'Lora', serif;
   --radius: 0.25rem;
 }
 
@@ -37,9 +40,6 @@
   --sidebar-accent-foreground: oklch(0.38 0.02 64.34);
   --sidebar-border: oklch(0.86 0.03 84.57);
   --sidebar-ring: oklch(0.62 0.08 65.54);
-  --font-sans: Libre Baskerville, serif;
-  --font-serif: Lora, serif;
-  --font-mono: IBM Plex Mono, monospace;
 }
 
 .theme-vintage-paper[data-theme="dark"] {
@@ -74,8 +74,5 @@
   --sidebar-accent-foreground: oklch(0.92 0.02 83.04);
   --sidebar-border: oklch(0.38 0.02 57.13);
   --sidebar-ring: oklch(0.73 0.06 66.69);
-  --radius: 0.25rem;
-  --font-sans: 'Geist', 'Geist Fallback', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-serif: "Geist", "Geist Fallback", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+/* ...existing code... */

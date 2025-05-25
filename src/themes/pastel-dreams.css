@@ -1,9 +1,9 @@
+/* This file is generated, please do not edit directly */
 .theme-pastel-dreams {
   --font-sans: Open Sans, sans-serif;
   --font-mono: IBM Plex Mono, monospace;
   --font-serif: Source Serif 4, serif;
   --radius: 1.5rem;
-  --tracking-normal: 0em;
   --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
   --tracking-tight: calc(var(--tracking-normal) - 0.025em);
   --tracking-wide: calc(var(--tracking-normal) + 0.025em);
@@ -58,6 +58,7 @@
   --shadow-lg: 0px 8px 16px -4px oklch(0.00 0 0 / 0.08), 0px 4px 6px -5px oklch(0.00 0 0 / 0.08);
   --shadow-xl: 0px 8px 16px -4px oklch(0.00 0 0 / 0.08), 0px 8px 10px -5px oklch(0.00 0 0 / 0.08);
   --shadow-2xl: 0px 8px 16px -4px oklch(0.00 0 0 / 0.20);
+  --tracking-normal: 0em;
 }
 
 .theme-pastel-dreams[data-theme="dark"] {
@@ -98,6 +99,7 @@
   --shadow-spread: 0px;
   --shadow-offset-x: 0;
   --shadow-offset-y: 1px;
+  --letter-spacing: 0em;
   --spacing: 0.25rem;
   --radius: 0.625rem;
   --shadow-2xs: 0 1px 3px 0px oklch(0.00 0 0 / 0.05);
