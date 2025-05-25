@@ -1,30 +1,15 @@
-import { useState } from 'react';
+"use client";
+import FluidCursor from "@/components/edil-ozi/fluid-cursor";
 
-const weekdayNames = 'MON TUE WED THU FRI SAT SUN'.split(' ');
-
-function Admin() {
-  const [selectedDay, setSelectedDay] = useState(new Date().getDay() === 0 ? 6 : new Date().getDay() - 1);
-  // TODO: Add state for rooms and staff, and drag-and-drop logic
+const Admin = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
-      <div className="flex gap-2">
-        {weekdayNames.map((day, idx) => (
-          <button
-            key={day}
-            className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
-              selectedDay === idx
-                ? 'bg-primary text-primary-foreground'
-                : 'text-muted-foreground hover:bg-accent'
-            }`}
-            onClick={() => setSelectedDay(idx)}
-          >
-            {day}
-          </button>
-        ))}
+    <>
+      <div className='bg-zinc-100 dark:bg-zinc-900 w-full flex items-center justify-center text-center h-[350px] z-10'>
+        Try it on the whole page
       </div>
-    </div>
+      <FluidCursor />
+    </>
   );
-}
+};
 
 export default Admin;

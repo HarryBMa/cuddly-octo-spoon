@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: ["class"],
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
@@ -80,10 +80,15 @@ module.exports = {
     preflight: true,
   },
   safelist: [
+    // Layout and spacing
     'rounded-md',
     'rounded-lg',
     'rounded-sm',
     'rounded-full',
+    'shadow',
+    'shadow-sm',
+    
+    // Colors and backgrounds
     'bg-primary',
     'bg-secondary',
     'bg-accent',
@@ -94,22 +99,26 @@ module.exports = {
     'text-accent-foreground',
     'text-muted-foreground',
     'text-destructive-foreground',
+    
+    // Interactive states
     'hover:bg-primary/90',
     'hover:bg-secondary/80',
     'hover:bg-accent/20',
     'hover:bg-accent',
-    'border-primary',
-    'border-destructive',
-    'border-border',
-    'shadow',
-    'shadow-sm',
-    'transition-colors',
-    'transition-transform',
     'hover:-translate-y-1',
     'focus-visible:outline-none',
     'focus-visible:ring-1',
     'focus-visible:ring-ring',
     'disabled:pointer-events-none',
     'disabled:opacity-50',
+    
+    // Borders
+    'border-primary',
+    'border-destructive',
+    'border-border',
+    
+    // Transitions
+    'transition-colors',
+    'transition-transform',
   ],
-} 
+}; 
